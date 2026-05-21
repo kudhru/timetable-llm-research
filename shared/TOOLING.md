@@ -50,59 +50,95 @@ def call_claude_haiku(prompt: str) -> str:
 
 ---
 
-## Option B: OpenAI Model via `codex exec`
+## Option B: OpenAI GPT-5.x via `codex exec`
 
-Codex CLI (v0.130.0) is installed on this system. Use it to make calls to OpenAI models.
+Codex CLI (v0.130.0) is installed on this system. Default model is **`gpt-5.5`** with `reasoning_effort = "high"` (configured in `~/.codex/config.toml`). Use `-m` to override the model.
 
-### Basic usage
+### Basic usage (uses gpt-5.5 by default)
 ```bash
 codex exec "Your prompt here"
 ```
 
-### With model specification
+### With explicit model override
 ```bash
-codex exec --model gpt-4o-mini "Your prompt here"
+codex exec -m "gpt-5.5" "Your prompt here"
+codex exec -m "gpt-5" "Your prompt here"
 ```
 
-### Quiet mode (response only, no UI chrome)
+### Write last agent message to a file (preferred over stdout redirect)
 ```bash
-codex -q "Your prompt here"
+codex exec -o response.txt "Your prompt here"
 ```
 
-### Capture output
+### Skip git repo check (required when running outside a git repo)
 ```bash
-codex exec "Your prompt here" > response.txt
+codex exec --skip-git-repo-check "Your prompt here"
+```
+
+### Skip approval prompts (required for non-interactive use in scripts)
+```bash
+codex exec --dangerously-bypass-approvals-and-sandbox "Your prompt here"
+```
+
+### Full non-interactive invocation for scripted use
+```bash
+codex exec \
+  --dangerously-bypass-approvals-and-sandbox \
+  --skip-git-repo-check \
+  -m "gpt-5.5" \
+  -o response.txt \
+  "Your prompt here"
+```
+
+### Pipe a prompt from a file
+```bash
+cat prompt.txt | codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check
 ```
 
 ### In a Python subprocess
 ```python
-import subprocess
+import subprocess, tempfile, os
 
-def call_codex(prompt: str, model: str = "gpt-4o-mini") -> str:
-    result = subprocess.run(
-        ["codex", "exec", "--model", model, prompt],
-        capture_output=True, text=True, timeout=120
-    )
-    if result.returncode != 0:
-        raise RuntimeError(f"Codex call failed: {result.stderr}")
-    return result.stdout.strip()
+def call_codex(prompt: str, model: str = "gpt-5.5") -> str:
+    with tempfile.NamedTemporaryFile(mode='r', suffix='.txt', delete=False) as f:
+        out_path = f.name
+    try:
+        result = subprocess.run(
+            [
+                "codex", "exec",
+                "--dangerously-bypass-approvals-and-sandbox",
+                "--skip-git-repo-check",
+                "-m", model,
+                "-o", out_path,
+                prompt,
+            ],
+            capture_output=True, text=True, timeout=300
+        )
+        if result.returncode != 0:
+            raise RuntimeError(f"Codex call failed: {result.stderr}")
+        with open(out_path) as f:
+            return f.read().strip()
+    finally:
+        os.unlink(out_path)
 ```
 
 ### Notes
-- Verify exact flag syntax for your codex version: `codex --help`
-- `gpt-4o-mini` is the cost-efficient choice for high-throughput runs
-- `gpt-4o` for higher reasoning quality at evaluation steps
+- Default model `gpt-5.5` has `reasoning_effort = "high"` — very capable but slower
+- For high-throughput loops, consider `-m "gpt-5"` (faster, lower reasoning overhead)
+- `--dangerously-bypass-approvals-and-sandbox` is required for non-interactive scripted calls
+- `--skip-git-repo-check` is required when the working directory is not a git repo
+- Use `-o <file>` rather than stdout redirect — codex may print UI chrome to stdout
 
 ---
 
 ## Benchmarking Both Models
 
-Run every experiment with both Claude Haiku and one OpenAI model. Report results side-by-side. This gives the paper a model-agnostic findings section — stronger for reviewers.
+Run every experiment with both Claude Haiku and GPT-5.5. Report results side-by-side. This gives the paper a model-agnostic findings section — stronger for reviewers.
 
 ```python
 MODELS = {
     "claude-haiku": lambda p: call_claude_haiku(p),
-    "gpt-4o-mini": lambda p: call_codex(p, "gpt-4o-mini"),
+    "gpt-5.5": lambda p: call_codex(p, "gpt-5.5"),
 }
 
 for model_name, call_fn in MODELS.items():
