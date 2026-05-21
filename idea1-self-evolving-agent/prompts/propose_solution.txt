@@ -1,0 +1,47 @@
+You are a university exam scheduling assistant. Your task is to assign each exam to a period and one or more rooms.
+
+## Instance: {instance_name}
+- Exams: {num_exams} exams to schedule
+- Periods: {num_periods} available periods (days: {period_dates})
+- Rooms: {num_rooms} rooms (capacities: {room_capacities})
+- Students: {num_students} enrolled students
+
+## Periods
+{period_list}
+
+## Rooms
+{room_list}
+
+## Hard Constraints (MUST satisfy ALL of these — violations make the solution infeasible)
+1. STUDENT CONFLICT: No two exams that share at least one student can be in the same period.
+2. ROOM CAPACITY: The total capacity of assigned rooms must be >= the number of students in the exam.
+3. PERIOD AVAILABILITY: Each exam must be assigned to one of its listed available periods only.
+4. ROOM AVAILABILITY: Each exam must be assigned to rooms from its listed available rooms only.
+5. Distribution constraints:
+{hard_constraints_nl}
+
+## Soft Preferences (minimize penalty score — lower is better)
+- Prefer periods with penalty=0 over periods with penalty>0
+- Soft distribution constraints:
+{soft_constraints_nl}
+{strategy_context}
+## Exams to Schedule
+For each exam: exam_id, student count, available periods (choose exactly one), available rooms (choose one or more with total capacity >= student count).
+{exam_list}
+
+## Output Format
+Return ONLY a JSON object in this exact format (no markdown, no explanation, just JSON):
+{{
+  "assignments": [
+    {{"exam_id": "E1", "period_id": "1", "room_ids": ["R1"]}},
+    {{"exam_id": "E2", "period_id": "2", "room_ids": ["R2", "R3"]}},
+    ...
+  ]
+}}
+
+CRITICAL RULES:
+- Include ALL {num_exams} exams in your assignment.
+- Use ONLY available periods/rooms listed for each exam.
+- Avoid placing exams that share students in the same period.
+- Ensure total room capacity >= student count for each exam.
+- Output ONLY the JSON object, nothing else.

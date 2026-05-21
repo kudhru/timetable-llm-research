@@ -1,0 +1,20 @@
+You proposed a schedule but it didn't work well.
+
+Some problems were observed:
+- Has hard constraint violations: {has_violations} ({num_violations} issues found)
+- Penalty score: {penalty} (lower is better; 0 is perfect)
+- Some students may have overlapping exam conflicts (scheduled in the same period)
+- Some rooms may not have sufficient capacity for assigned exams
+- The schedule could be better organized to spread exams across the available periods
+
+Please reflect on what might have gone wrong and propose a better, more balanced schedule that avoids these kinds of problems.
+
+Output ONLY a JSON object in this exact format (no markdown, no explanation):
+{{
+  "diagnosis": "What you think went wrong",
+  "strategy_update": "How you will improve in the next attempt",
+  "assignments": [
+    {{"exam_id": "E1", "period_id": "1", "room_ids": ["R1"]}},
+    ...
+  ]
+}}

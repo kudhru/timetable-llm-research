@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Synthetic Small Examination Timetable for testing the pipeline-->
+<examtt version="1.0" created="2026-05-22">
+  <parameters>
+    <property name="directConflictWeight" value="1000.0"/>
+    <property name="maxRooms" value="4"/>
+    <property name="periodWeight" value="1.0"/>
+  </parameters>
+  <periods>
+    <period id="1" length="120" day="Mon 12/15" time="8:00a - 10:00a" penalty="0"/>
+    <period id="2" length="120" day="Mon 12/15" time="10:20a - 12:20p" penalty="0"/>
+    <period id="3" length="120" day="Mon 12/15" time="1:00p - 3:00p" penalty="0"/>
+    <period id="4" length="120" day="Tue 12/16" time="8:00a - 10:00a" penalty="0"/>
+    <period id="5" length="120" day="Tue 12/16" time="10:20a - 12:20p" penalty="0"/>
+    <period id="6" length="120" day="Tue 12/16" time="1:00p - 3:00p" penalty="0"/>
+    <period id="7" length="120" day="Wed 12/17" time="8:00a - 10:00a" penalty="0"/>
+    <period id="8" length="120" day="Wed 12/17" time="10:20a - 12:20p" penalty="0"/>
+    <period id="9" length="120" day="Fri 12/19" time="1:00p - 3:00p" penalty="1"/>
+    <period id="10" length="120" day="Sat 12/20" time="8:00a - 10:00a" penalty="4"/>
+  </periods>
+  <rooms>
+    <room id="R1" size="60" alt="30" coordinates="40.42,-86.91"/>
+    <room id="R2" size="40" alt="20" coordinates="40.42,-86.91"/>
+    <room id="R3" size="80" alt="40" coordinates="40.42,-86.92"/>
+    <room id="R4" size="30" alt="15" coordinates="40.42,-86.92"/>
+    <room id="R5" size="100" alt="50" coordinates="40.41,-86.92"/>
+  </rooms>
+  <exams>
+    <!-- E1: CS101 Introduction to CS, 25 students -->
+    <exam id="E1" length="120" alt="false" printOffset="0" average="25">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R1"/><room id="R2"/><room id="R3"/>
+    </exam>
+    <!-- E2: CS201 Data Structures, 30 students -->
+    <exam id="E2" length="120" alt="false" printOffset="0" average="30">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R1"/><room id="R2"/><room id="R3"/>
+    </exam>
+    <!-- E3: MATH101 Calculus I, 50 students -->
+    <exam id="E3" length="120" alt="false" printOffset="0" average="50">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+    <!-- E4: MATH201 Calculus II, 45 students -->
+    <exam id="E4" length="120" alt="false" printOffset="0" average="45">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+    <!-- E5: PHYS101 Physics I, 40 students -->
+    <exam id="E5" length="120" alt="false" printOffset="0" average="40">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+    <!-- E6: PHYS201 Physics II, 35 students -->
+    <exam id="E6" length="120" alt="false" printOffset="0" average="35">
+      <period id="2"/><period id="3"/><period id="4"/><period id="5"/>
+      <period id="6"/><period id="7"/><period id="8"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+    <!-- E7: ENG101 English Composition, 28 students -->
+    <exam id="E7" length="120" alt="false" printOffset="0" average="28">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R1"/><room id="R2"/><room id="R3"/>
+    </exam>
+    <!-- E8: CHEM101 General Chemistry, 55 students -->
+    <exam id="E8" length="120" alt="false" printOffset="0" average="55">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+    <!-- E9: CS301 Algorithms, 20 students -->
+    <exam id="E9" length="120" alt="false" printOffset="0" average="20">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R1"/><room id="R2"/><room id="R4"/>
+    </exam>
+    <!-- E10: CS401 OS, 18 students -->
+    <exam id="E10" length="120" alt="false" printOffset="0" average="18">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R1"/><room id="R2"/><room id="R4"/>
+    </exam>
+    <!-- E11: STAT201 Statistics, 38 students -->
+    <exam id="E11" length="120" alt="false" printOffset="0" average="38">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+    <!-- E12: ECE201 Circuits, 33 students -->
+    <exam id="E12" length="120" alt="false" printOffset="0" average="33">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+    <!-- E13: ME201 Thermodynamics, 42 students -->
+    <exam id="E13" length="120" alt="false" printOffset="0" average="42">
+      <period id="1"/><period id="2"/><period id="3"/><period id="5"/>
+      <period id="6"/><period id="7"/><period id="8"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+    <!-- E14: IE201 Engineering Economy, 25 students -->
+    <exam id="E14" length="120" alt="false" printOffset="0" average="25">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R1"/><room id="R2"/><room id="R3"/>
+    </exam>
+    <!-- E15: CS501 Databases, 22 students -->
+    <exam id="E15" length="120" alt="false" printOffset="0" average="22">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R1"/><room id="R2"/><room id="R4"/>
+    </exam>
+    <!-- E16: CS601 Machine Learning, 15 students -->
+    <exam id="E16" length="120" alt="false" printOffset="0" average="15">
+      <period id="2"/><period id="3"/><period id="4"/><period id="5"/>
+      <period id="6"/><period id="7"/><period id="8"/>
+      <room id="R1"/><room id="R2"/><room id="R4"/>
+    </exam>
+    <!-- E17: BIO101 Biology, 48 students -->
+    <exam id="E17" length="120" alt="false" printOffset="0" average="48">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+    <!-- E18: PSYC101 Psychology, 60 students -->
+    <exam id="E18" length="120" alt="false" printOffset="0" average="60">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R5"/>
+    </exam>
+    <!-- E19: ECON101 Microeconomics, 52 students -->
+    <exam id="E19" length="120" alt="false" printOffset="0" average="52">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+    <!-- E20: SOC101 Sociology, 35 students -->
+    <exam id="E20" length="120" alt="false" printOffset="0" average="35">
+      <period id="1"/><period id="2"/><period id="3"/><period id="4"/>
+      <period id="5"/><period id="6"/><period id="7"/><period id="8"/>
+      <room id="R3"/><room id="R5"/>
+    </exam>
+  </exams>
+  <students>
+    <!-- CS majors: take CS101, CS201, MATH101, PHYS101 -->
+    <student id="S1"><exam id="E1"/><exam id="E2"/><exam id="E3"/><exam id="E5"/></student>
+    <student id="S2"><exam id="E1"/><exam id="E2"/><exam id="E3"/><exam id="E5"/></student>
+    <student id="S3"><exam id="E1"/><exam id="E2"/><exam id="E3"/><exam id="E5"/></student>
+    <student id="S4"><exam id="E1"/><exam id="E2"/><exam id="E3"/><exam id="E5"/></student>
+    <student id="S5"><exam id="E1"/><exam id="E2"/><exam id="E3"/><exam id="E5"/></student>
+    <student id="S6"><exam id="E1"/><exam id="E2"/><exam id="E4"/><exam id="E7"/></student>
+    <student id="S7"><exam id="E1"/><exam id="E2"/><exam id="E4"/><exam id="E7"/></student>
+    <student id="S8"><exam id="E1"/><exam id="E2"/><exam id="E4"/><exam id="E7"/></student>
+    <student id="S9"><exam id="E1"/><exam id="E2"/><exam id="E4"/></student>
+    <student id="S10"><exam id="E1"/><exam id="E2"/><exam id="E4"/></student>
+    <!-- CS sophomore: CS201, CS301, MATH201 -->
+    <student id="S11"><exam id="E2"/><exam id="E9"/><exam id="E4"/><exam id="E7"/></student>
+    <student id="S12"><exam id="E2"/><exam id="E9"/><exam id="E4"/><exam id="E7"/></student>
+    <student id="S13"><exam id="E2"/><exam id="E9"/><exam id="E4"/></student>
+    <student id="S14"><exam id="E2"/><exam id="E9"/><exam id="E11"/></student>
+    <student id="S15"><exam id="E2"/><exam id="E9"/><exam id="E11"/></student>
+    <!-- CS junior: CS301, CS401, CS501 -->
+    <student id="S16"><exam id="E9"/><exam id="E10"/><exam id="E15"/><exam id="E11"/></student>
+    <student id="S17"><exam id="E9"/><exam id="E10"/><exam id="E15"/><exam id="E11"/></student>
+    <student id="S18"><exam id="E9"/><exam id="E10"/><exam id="E15"/></student>
+    <student id="S19"><exam id="E9"/><exam id="E10"/><exam id="E16"/></student>
+    <student id="S20"><exam id="E9"/><exam id="E10"/><exam id="E16"/></student>
+    <!-- CS senior: CS401, CS501, CS601 -->
+    <student id="S21"><exam id="E10"/><exam id="E15"/><exam id="E16"/></student>
+    <student id="S22"><exam id="E10"/><exam id="E15"/><exam id="E16"/></student>
+    <student id="S23"><exam id="E10"/><exam id="E15"/><exam id="E16"/></student>
+    <student id="S24"><exam id="E10"/><exam id="E15"/><exam id="E16"/></student>
+    <student id="S25"><exam id="E10"/><exam id="E15"/></student>
+    <!-- MATH majors: MATH101, MATH201, STAT201 -->
+    <student id="S26"><exam id="E3"/><exam id="E4"/><exam id="E11"/><exam id="E7"/></student>
+    <student id="S27"><exam id="E3"/><exam id="E4"/><exam id="E11"/><exam id="E7"/></student>
+    <student id="S28"><exam id="E3"/><exam id="E4"/><exam id="E11"/></student>
+    <student id="S29"><exam id="E3"/><exam id="E4"/><exam id="E11"/></student>
+    <student id="S30"><exam id="E3"/><exam id="E4"/><exam id="E11"/></student>
+    <!-- Physics majors: PHYS101, PHYS201, MATH101, MATH201 -->
+    <student id="S31"><exam id="E5"/><exam id="E6"/><exam id="E3"/><exam id="E4"/></student>
+    <student id="S32"><exam id="E5"/><exam id="E6"/><exam id="E3"/><exam id="E4"/></student>
+    <student id="S33"><exam id="E5"/><exam id="E6"/><exam id="E3"/><exam id="E4"/></student>
+    <student id="S34"><exam id="E5"/><exam id="E6"/><exam id="E3"/></student>
+    <student id="S35"><exam id="E5"/><exam id="E6"/><exam id="E4"/></student>
+    <!-- Chem majors: CHEM101, PHYS101, MATH101 -->
+    <student id="S36"><exam id="E8"/><exam id="E5"/><exam id="E3"/><exam id="E7"/></student>
+    <student id="S37"><exam id="E8"/><exam id="E5"/><exam id="E3"/><exam id="E7"/></student>
+    <student id="S38"><exam id="E8"/><exam id="E5"/><exam id="E3"/></student>
+    <student id="S39"><exam id="E8"/><exam id="E5"/><exam id="E4"/></student>
+    <student id="S40"><exam id="E8"/><exam id="E5"/><exam id="E4"/></student>
+    <!-- ECE majors: ECE201, MATH201, PHYS201 -->
+    <student id="S41"><exam id="E12"/><exam id="E4"/><exam id="E6"/><exam id="E7"/></student>
+    <student id="S42"><exam id="E12"/><exam id="E4"/><exam id="E6"/><exam id="E7"/></student>
+    <student id="S43"><exam id="E12"/><exam id="E4"/><exam id="E6"/></student>
+    <student id="S44"><exam id="E12"/><exam id="E4"/><exam id="E6"/></student>
+    <student id="S45"><exam id="E12"/><exam id="E4"/><exam id="E11"/></student>
+    <!-- ME majors: ME201, MATH201, PHYS201 -->
+    <student id="S46"><exam id="E13"/><exam id="E4"/><exam id="E6"/><exam id="E7"/></student>
+    <student id="S47"><exam id="E13"/><exam id="E4"/><exam id="E6"/></student>
+    <student id="S48"><exam id="E13"/><exam id="E4"/><exam id="E6"/></student>
+    <student id="S49"><exam id="E13"/><exam id="E5"/><exam id="E4"/></student>
+    <student id="S50"><exam id="E13"/><exam id="E5"/><exam id="E4"/></student>
+    <!-- IE majors: IE201, MATH201, STAT201 -->
+    <student id="S51"><exam id="E14"/><exam id="E4"/><exam id="E11"/><exam id="E7"/></student>
+    <student id="S52"><exam id="E14"/><exam id="E4"/><exam id="E11"/></student>
+    <student id="S53"><exam id="E14"/><exam id="E4"/><exam id="E11"/></student>
+    <student id="S54"><exam id="E14"/><exam id="E11"/><exam id="E3"/></student>
+    <student id="S55"><exam id="E14"/><exam id="E11"/><exam id="E3"/></student>
+    <!-- BIO majors: BIO101, CHEM101, MATH101 -->
+    <student id="S56"><exam id="E17"/><exam id="E8"/><exam id="E3"/><exam id="E7"/></student>
+    <student id="S57"><exam id="E17"/><exam id="E8"/><exam id="E3"/></student>
+    <student id="S58"><exam id="E17"/><exam id="E8"/><exam id="E3"/></student>
+    <student id="S59"><exam id="E17"/><exam id="E8"/><exam id="E5"/></student>
+    <student id="S60"><exam id="E17"/><exam id="E8"/><exam id="E5"/></student>
+    <!-- PSYC majors: PSYC101, BIO101, STAT201 -->
+    <student id="S61"><exam id="E18"/><exam id="E17"/><exam id="E11"/><exam id="E7"/></student>
+    <student id="S62"><exam id="E18"/><exam id="E17"/><exam id="E11"/></student>
+    <student id="S63"><exam id="E18"/><exam id="E17"/><exam id="E11"/></student>
+    <student id="S64"><exam id="E18"/><exam id="E17"/><exam id="E3"/></student>
+    <student id="S65"><exam id="E18"/><exam id="E17"/><exam id="E3"/></student>
+    <!-- ECON majors: ECON101, MATH101, STAT201 -->
+    <student id="S66"><exam id="E19"/><exam id="E3"/><exam id="E11"/><exam id="E7"/></student>
+    <student id="S67"><exam id="E19"/><exam id="E3"/><exam id="E11"/></student>
+    <student id="S68"><exam id="E19"/><exam id="E3"/><exam id="E11"/></student>
+    <student id="S69"><exam id="E19"/><exam id="E4"/><exam id="E11"/></student>
+    <student id="S70"><exam id="E19"/><exam id="E4"/><exam id="E11"/></student>
+    <!-- SOC majors: SOC101, PSYC101, ECON101 -->
+    <student id="S71"><exam id="E20"/><exam id="E18"/><exam id="E19"/><exam id="E7"/></student>
+    <student id="S72"><exam id="E20"/><exam id="E18"/><exam id="E19"/></student>
+    <student id="S73"><exam id="E20"/><exam id="E18"/><exam id="E19"/></student>
+    <student id="S74"><exam id="E20"/><exam id="E18"/><exam id="E11"/></student>
+    <student id="S75"><exam id="E20"/><exam id="E18"/><exam id="E11"/></student>
+    <!-- Additional CS freshmen -->
+    <student id="S76"><exam id="E1"/><exam id="E3"/><exam id="E7"/></student>
+    <student id="S77"><exam id="E1"/><exam id="E3"/><exam id="E7"/></student>
+    <student id="S78"><exam id="E1"/><exam id="E3"/><exam id="E7"/></student>
+    <student id="S79"><exam id="E1"/><exam id="E3"/><exam id="E7"/></student>
+    <student id="S80"><exam id="E1"/><exam id="E3"/><exam id="E7"/></student>
+    <!-- Additional MATH students -->
+    <student id="S81"><exam id="E3"/><exam id="E4"/><exam id="E7"/></student>
+    <student id="S82"><exam id="E3"/><exam id="E4"/><exam id="E7"/></student>
+    <student id="S83"><exam id="E3"/><exam id="E4"/><exam id="E8"/></student>
+    <student id="S84"><exam id="E3"/><exam id="E4"/><exam id="E8"/></student>
+    <student id="S85"><exam id="E3"/><exam id="E8"/><exam id="E5"/></student>
+    <!-- Additional CHEM/PHYS students -->
+    <student id="S86"><exam id="E8"/><exam id="E5"/><exam id="E6"/></student>
+    <student id="S87"><exam id="E8"/><exam id="E5"/><exam id="E6"/></student>
+    <student id="S88"><exam id="E8"/><exam id="E6"/><exam id="E4"/></student>
+    <student id="S89"><exam id="E8"/><exam id="E6"/><exam id="E4"/></student>
+    <student id="S90"><exam id="E8"/><exam id="E5"/><exam id="E3"/></student>
+    <!-- Additional ECON/SOC students -->
+    <student id="S91"><exam id="E19"/><exam id="E20"/><exam id="E7"/></student>
+    <student id="S92"><exam id="E19"/><exam id="E20"/><exam id="E7"/></student>
+    <student id="S93"><exam id="E19"/><exam id="E20"/><exam id="E18"/></student>
+    <student id="S94"><exam id="E19"/><exam id="E20"/><exam id="E18"/></student>
+    <student id="S95"><exam id="E19"/><exam id="E20"/><exam id="E18"/></student>
+    <!-- Additional students for exam counts -->
+    <student id="S96"><exam id="E1"/><exam id="E2"/><exam id="E9"/></student>
+    <student id="S97"><exam id="E1"/><exam id="E2"/><exam id="E9"/></student>
+    <student id="S98"><exam id="E1"/><exam id="E7"/><exam id="E3"/></student>
+    <student id="S99"><exam id="E12"/><exam id="E13"/><exam id="E6"/></student>
+    <student id="S100"><exam id="E12"/><exam id="E13"/><exam id="E6"/></student>
+    <student id="S101"><exam id="E14"/><exam id="E19"/><exam id="E11"/></student>
+    <student id="S102"><exam id="E14"/><exam id="E20"/><exam id="E7"/></student>
+    <student id="S103"><exam id="E16"/><exam id="E15"/><exam id="E9"/></student>
+    <student id="S104"><exam id="E16"/><exam id="E15"/><exam id="E9"/></student>
+    <student id="S105"><exam id="E17"/><exam id="E18"/><exam id="E19"/></student>
+    <student id="S106"><exam id="E17"/><exam id="E18"/><exam id="E19"/></student>
+    <student id="S107"><exam id="E17"/><exam id="E18"/><exam id="E20"/></student>
+    <student id="S108"><exam id="E6"/><exam id="E12"/><exam id="E4"/></student>
+    <student id="S109"><exam id="E6"/><exam id="E13"/><exam id="E4"/></student>
+    <student id="S110"><exam id="E5"/><exam id="E12"/><exam id="E3"/></student>
+    <student id="S111"><exam id="E5"/><exam id="E3"/><exam id="E8"/></student>
+    <student id="S112"><exam id="E11"/><exam id="E4"/><exam id="E19"/></student>
+    <student id="S113"><exam id="E11"/><exam id="E4"/><exam id="E20"/></student>
+    <student id="S114"><exam id="E2"/><exam id="E1"/><exam id="E7"/></student>
+    <student id="S115"><exam id="E2"/><exam id="E1"/><exam id="E7"/></student>
+    <student id="S116"><exam id="E9"/><exam id="E10"/><exam id="E15"/></student>
+    <student id="S117"><exam id="E9"/><exam id="E10"/><exam id="E16"/></student>
+    <student id="S118"><exam id="E18"/><exam id="E19"/><exam id="E20"/></student>
+    <student id="S119"><exam id="E18"/><exam id="E19"/><exam id="E20"/></student>
+    <student id="S120"><exam id="E8"/><exam id="E17"/><exam id="E3"/></student>
+    <student id="S121"><exam id="E8"/><exam id="E17"/><exam id="E5"/></student>
+    <student id="S122"><exam id="E3"/><exam id="E4"/><exam id="E5"/></student>
+    <student id="S123"><exam id="E3"/><exam id="E4"/><exam id="E6"/></student>
+    <student id="S124"><exam id="E1"/><exam id="E3"/><exam id="E11"/></student>
+    <student id="S125"><exam id="E1"/><exam id="E3"/><exam id="E11"/></student>
+    <student id="S126"><exam id="E2"/><exam id="E9"/><exam id="E16"/></student>
+    <student id="S127"><exam id="E2"/><exam id="E10"/><exam id="E15"/></student>
+    <student id="S128"><exam id="E12"/><exam id="E4"/><exam id="E11"/></student>
+    <student id="S129"><exam id="E13"/><exam id="E5"/><exam id="E6"/></student>
+    <student id="S130"><exam id="E14"/><exam id="E3"/><exam id="E7"/></student>
+    <student id="S131"><exam id="E15"/><exam id="E16"/><exam id="E9"/></student>
+    <student id="S132"><exam id="E17"/><exam id="E20"/><exam id="E11"/></student>
+    <student id="S133"><exam id="E18"/><exam id="E20"/><exam id="E7"/></student>
+    <student id="S134"><exam id="E19"/><exam id="E18"/><exam id="E7"/></student>
+    <student id="S135"><exam id="E1"/><exam id="E5"/><exam id="E3"/></student>
+    <student id="S136"><exam id="E2"/><exam id="E6"/><exam id="E4"/></student>
+    <student id="S137"><exam id="E2"/><exam id="E7"/><exam id="E3"/></student>
+    <student id="S138"><exam id="E9"/><exam id="E11"/><exam id="E4"/></student>
+    <student id="S139"><exam id="E10"/><exam id="E15"/><exam id="E16"/></student>
+    <student id="S140"><exam id="E13"/><exam id="E14"/><exam id="E4"/></student>
+    <student id="S141"><exam id="E8"/><exam id="E3"/><exam id="E17"/></student>
+    <student id="S142"><exam id="E6"/><exam id="E5"/><exam id="E4"/></student>
+    <student id="S143"><exam id="E12"/><exam id="E6"/><exam id="E5"/></student>
+    <student id="S144"><exam id="E19"/><exam id="E11"/><exam id="E7"/></student>
+    <student id="S145"><exam id="E20"/><exam id="E19"/><exam id="E3"/></student>
+    <student id="S146"><exam id="E17"/><exam id="E8"/><exam id="E6"/></student>
+    <student id="S147"><exam id="E18"/><exam id="E17"/><exam id="E7"/></student>
+    <student id="S148"><exam id="E1"/><exam id="E2"/><exam id="E3"/></student>
+    <student id="S149"><exam id="E4"/><exam id="E3"/><exam id="E5"/></student>
+    <student id="S150"><exam id="E9"/><exam id="E2"/><exam id="E7"/></student>
+    <student id="S151"><exam id="E10"/><exam id="E9"/><exam id="E11"/></student>
+    <student id="S152"><exam id="E15"/><exam id="E9"/><exam id="E16"/></student>
+    <student id="S153"><exam id="E13"/><exam id="E12"/><exam id="E4"/></student>
+    <student id="S154"><exam id="E14"/><exam id="E13"/><exam id="E11"/></student>
+    <student id="S155"><exam id="E17"/><exam id="E18"/><exam id="E8"/></student>
+    <student id="S156"><exam id="E20"/><exam id="E19"/><exam id="E18"/></student>
+    <student id="S157"><exam id="E6"/><exam id="E12"/><exam id="E13"/></student>
+    <student id="S158"><exam id="E5"/><exam id="E6"/><exam id="E8"/></student>
+    <student id="S159"><exam id="E3"/><exam id="E11"/><exam id="E4"/></student>
+    <student id="S160"><exam id="E1"/><exam id="E2"/><exam id="E7"/></student>
+    <student id="S161"><exam id="E2"/><exam id="E4"/><exam id="E11"/></student>
+    <student id="S162"><exam id="E9"/><exam id="E10"/><exam id="E11"/></student>
+    <student id="S163"><exam id="E15"/><exam id="E16"/><exam id="E11"/></student>
+    <student id="S164"><exam id="E17"/><exam id="E8"/><exam id="E11"/></student>
+    <student id="S165"><exam id="E18"/><exam id="E19"/><exam id="E11"/></student>
+    <student id="S166"><exam id="E20"/><exam id="E18"/><exam id="E19"/></student>
+    <student id="S167"><exam id="E13"/><exam id="E4"/><exam id="E6"/></student>
+    <student id="S168"><exam id="E12"/><exam id="E13"/><exam id="E4"/></student>
+    <student id="S169"><exam id="E7"/><exam id="E3"/><exam id="E4"/></student>
+    <student id="S170"><exam id="E7"/><exam id="E1"/><exam id="E2"/></student>
+    <student id="S171"><exam id="E8"/><exam id="E5"/><exam id="E17"/></student>
+    <student id="S172"><exam id="E8"/><exam id="E6"/><exam id="E5"/></student>
+    <student id="S173"><exam id="E3"/><exam id="E4"/><exam id="E11"/></student>
+    <student id="S174"><exam id="E19"/><exam id="E20"/><exam id="E7"/></student>
+    <student id="S175"><exam id="E18"/><exam id="E19"/><exam id="E20"/></student>
+    <student id="S176"><exam id="E16"/><exam id="E15"/><exam id="E10"/></student>
+    <student id="S177"><exam id="E9"/><exam id="E15"/><exam id="E10"/></student>
+    <student id="S178"><exam id="E2"/><exam id="E1"/><exam id="E9"/></student>
+    <student id="S179"><exam id="E4"/><exam id="E5"/><exam id="E6"/></student>
+    <student id="S180"><exam id="E12"/><exam id="E6"/><exam id="E13"/></student>
+    <student id="S181"><exam id="E14"/><exam id="E11"/><exam id="E19"/></student>
+    <student id="S182"><exam id="E17"/><exam id="E8"/><exam id="E18"/></student>
+    <student id="S183"><exam id="E20"/><exam id="E18"/><exam id="E17"/></student>
+    <student id="S184"><exam id="E1"/><exam id="E7"/><exam id="E11"/></student>
+    <student id="S185"><exam id="E3"/><exam id="E8"/><exam id="E17"/></student>
+    <student id="S186"><exam id="E9"/><exam id="E2"/><exam id="E16"/></student>
+    <student id="S187"><exam id="E10"/><exam id="E16"/><exam id="E15"/></student>
+    <student id="S188"><exam id="E13"/><exam id="E5"/><exam id="E8"/></student>
+    <student id="S189"><exam id="E14"/><exam id="E4"/><exam id="E19"/></student>
+    <student id="S190"><exam id="E6"/><exam id="E12"/><exam id="E8"/></student>
+    <student id="S191"><exam id="E11"/><exam id="E19"/><exam id="E20"/></student>
+    <student id="S192"><exam id="E7"/><exam id="E18"/><exam id="E19"/></student>
+    <student id="S193"><exam id="E3"/><exam id="E5"/><exam id="E8"/></student>
+    <student id="S194"><exam id="E4"/><exam id="E6"/><exam id="E12"/></student>
+    <student id="S195"><exam id="E2"/><exam id="E4"/><exam id="E7"/></student>
+    <student id="S196"><exam id="E9"/><exam id="E11"/><exam id="E15"/></student>
+    <student id="S197"><exam id="E10"/><exam id="E15"/><exam id="E9"/></student>
+    <student id="S198"><exam id="E17"/><exam id="E20"/><exam id="E18"/></student>
+    <student id="S199"><exam id="E8"/><exam id="E17"/><exam id="E18"/></student>
+    <student id="S200"><exam id="E19"/><exam id="E11"/><exam id="E20"/></student>
+  </students>
+  <constraints>
+    <!-- CS401 (OS) and SOC101 must be in same period (cross-listed section) -->
+    <same-period id="C1">
+      <exam id="E10"/>
+      <exam id="E20"/>
+    </same-period>
+    <!-- PHYS101 must come before PHYS201 -->
+    <precedence id="C2">
+      <exam id="E5"/>
+      <exam id="E6"/>
+    </precedence>
+    <!-- MATH101 and MATH201 must be in different periods -->
+    <different-period id="C3">
+      <exam id="E3"/>
+      <exam id="E4"/>
+    </different-period>
+  </constraints>
+</examtt>

@@ -1,0 +1,98 @@
+[
+  {
+    "run": 0,
+    "instance": "synthetic_small",
+    "model": "claude-haiku",
+    "parse_success": true,
+    "num_violations": 7,
+    "violation_types": {
+      "student_conflict": 7
+    },
+    "penalty": null,
+    "feasible": false,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1268,
+    "error": null
+  },
+  {
+    "run": 1,
+    "instance": "synthetic_small",
+    "model": "claude-haiku",
+    "parse_success": true,
+    "num_violations": 12,
+    "violation_types": {
+      "student_conflict": 12
+    },
+    "penalty": null,
+    "feasible": false,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1268,
+    "error": null
+  },
+  {
+    "run": 2,
+    "instance": "synthetic_small",
+    "model": "claude-haiku",
+    "parse_success": true,
+    "num_violations": 10,
+    "violation_types": {
+      "student_conflict": 10
+    },
+    "penalty": null,
+    "feasible": false,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1268,
+    "error": null
+  },
+  {
+    "run": 3,
+    "instance": "synthetic_small",
+    "model": "claude-haiku",
+    "parse_success": true,
+    "num_violations": 10,
+    "violation_types": {
+      "student_conflict": 10
+    },
+    "penalty": null,
+    "feasible": false,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1268,
+    "error": null
+  },
+  {
+    "run": 4,
+    "instance": "synthetic_small",
+    "model": "claude-haiku",
+    "parse_success": true,
+    "num_violations": 10,
+    "violation_types": {
+      "student_conflict": 10
+    },
+    "penalty": null,
+    "feasible": false,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1268,
+    "error": null
+  },
+  {
+    "run": 0,
+    "instance": "synthetic_small",
+    "model": "gpt-4o-mini",
+    "parse_success": true,
+    "num_violations": 8,
+    "violation_types": {
+      "student_conflict": 8
+    },
+    "penalty": null,
+    "feasible": false,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1048,
+    "error": null
+  }
+]

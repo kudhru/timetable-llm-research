@@ -1,0 +1,35 @@
+You proposed a schedule for instance {instance_name}. The formal constraint verifier found these violations:
+
+## Hard Constraint Violations ({num_violations} total)
+{violation_list}
+
+## Metrics
+- Current Penalty Score: {penalty}
+- Previous Best Penalty: {best_penalty}
+- Most violated constraint type: {most_common_violation_type} ({count} occurrences)
+- Exams most involved in violations: {hot_exams}
+- Most congested period: {busiest_period}
+
+## Your Current Assignment (for reference)
+{current_solution}
+
+## Task
+1. Diagnose WHY these violations occurred in your assignment.
+2. State a concise revised strategy to fix them in the next attempt.
+3. Propose a FULLY CORRECTED assignment for ALL exams.
+
+IMPORTANT: Your new assignment must satisfy ALL hard constraints:
+- No two exams sharing students in the same period
+- Room capacity >= student count for every exam
+- Only use each exam's listed available periods and rooms
+- Every exam must have exactly one assignment
+
+Output ONLY a JSON object in this exact format (no markdown, no explanation):
+{{
+  "diagnosis": "Brief explanation of what went wrong",
+  "strategy_update": "Specific rules you will follow in the new assignment",
+  "assignments": [
+    {{"exam_id": "E1", "period_id": "1", "room_ids": ["R1"]}},
+    ...
+  ]
+}}
