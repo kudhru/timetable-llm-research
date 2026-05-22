@@ -2,14 +2,44 @@
 LLM calling utilities and prompt building for the exam scheduling agent.
 """
 import json
+import os
 import re
 import subprocess
+import tempfile
 import time
 from pathlib import Path
 from typing import Optional
 
 
 # ── LLM calling ────────────────────────────────────────────────────────────────
+
+def call_codex(prompt: str, model: str = "gpt-5.5") -> str:
+    """
+    Call codex exec with the given prompt using a temp file for output.
+    Uses --dangerously-bypass-approvals-and-sandbox and --skip-git-repo-check.
+    """
+    with tempfile.NamedTemporaryFile(mode='r', suffix='.txt', delete=False) as f:
+        out_path = f.name
+    try:
+        result = subprocess.run(
+            [
+                "codex", "exec",
+                "--dangerously-bypass-approvals-and-sandbox",
+                "--skip-git-repo-check",
+                "-m", model,
+                "-o", out_path,
+                prompt,
+            ],
+            capture_output=True, text=True, timeout=300
+        )
+        if result.returncode != 0:
+            raise RuntimeError(f"Codex call failed: {result.stderr}")
+        with open(out_path) as f:
+            return f.read().strip()
+    finally:
+        if os.path.exists(out_path):
+            os.unlink(out_path)
+
 
 def call_llm(prompt: str, model: str = "claude-haiku", timeout: int = 180) -> str:
     """
@@ -18,6 +48,7 @@ def call_llm(prompt: str, model: str = "claude-haiku", timeout: int = 180) -> st
     Supported models:
       - "claude-haiku": Claude Haiku via `claude -p`
       - "claude-sonnet": Claude Sonnet via `claude -p`
+      - "gpt-5.5": GPT-5.5 via `codex exec` (with bypass flags)
       - "gpt-4o-mini": GPT-4o-mini via `codex exec`
       - "gpt-4o": GPT-4o via `codex exec`
 
@@ -28,14 +59,29 @@ def call_llm(prompt: str, model: str = "claude-haiku", timeout: int = 180) -> st
             ["claude", "--model", "claude-haiku-4-5-20251001", "-p", prompt],
             capture_output=True, text=True, timeout=timeout,
         )
+        if result.returncode != 0:
+            raise RuntimeError(
+                f"LLM call failed (model={model}, returncode={result.returncode}):\n"
+                f"STDERR: {result.stderr[:500]}"
+            )
+        return result.stdout.strip()
     elif model in ("claude-sonnet", "claude-sonnet-4-6"):
         result = subprocess.run(
             ["claude", "--model", "claude-sonnet-4-6", "-p", prompt],
             capture_output=True, text=True, timeout=timeout,
         )
+        if result.returncode != 0:
+            raise RuntimeError(
+                f"LLM call failed (model={model}, returncode={result.returncode}):\n"
+                f"STDERR: {result.stderr[:500]}"
+            )
+        return result.stdout.strip()
+    elif model == "gpt-5.5":
+        # Route to call_codex with the new flags
+        return call_codex(prompt, "gpt-5.5")
     elif model.startswith("gpt") or model == "codex-default":
         # codex exec reads prompt from stdin; does not support gpt-4o-mini with ChatGPT accounts
-        # Use default model (gpt-5.5) when model="codex-default", otherwise pass -m flag
+        # Use default model when model="codex-default", otherwise pass -m flag
         cmd = ["codex", "exec"]
         if model != "codex-default" and not model.startswith("gpt-4o-mini"):
             cmd += ["-m", model]
@@ -44,15 +90,14 @@ def call_llm(prompt: str, model: str = "claude-haiku", timeout: int = 180) -> st
             input=prompt,
             capture_output=True, text=True, timeout=timeout,
         )
+        if result.returncode != 0:
+            raise RuntimeError(
+                f"LLM call failed (model={model}, returncode={result.returncode}):\n"
+                f"STDERR: {result.stderr[:500]}"
+            )
+        return result.stdout.strip()
     else:
         raise ValueError(f"Unknown model: {model!r}")
-
-    if result.returncode != 0:
-        raise RuntimeError(
-            f"LLM call failed (model={model}, returncode={result.returncode}):\n"
-            f"STDERR: {result.stderr[:500]}"
-        )
-    return result.stdout.strip()
 
 
 def logged_call(

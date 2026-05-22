@@ -162,56 +162,77 @@ def print_summary_table(all_results: list):
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Baseline zero-shot exam scheduling experiment")
+    parser.add_argument("--model", default=None,
+                        help="Model to run (e.g. claude-haiku, gpt-5.5). If not set, runs default suite.")
+    parser.add_argument("--runs", type=int, default=5,
+                        help="Number of zero-shot runs per model (default: 5)")
+    parser.add_argument("--output", default=None,
+                        help="Output JSON path (default: results/baseline_results.json)")
+    parser.add_argument("--instance", default=None,
+                        help="Path to instance XML (default: data/purdue_exam/synthetic_small.xml)")
+    args = parser.parse_args()
+
     # Use synthetic_small instance (manageable for LLM)
-    instance_path = str(DATA_DIR / "synthetic_small.xml")
+    instance_path = args.instance or str(DATA_DIR / "synthetic_small.xml")
+    output_path = args.output or str(RESULTS_DIR / "baseline_results.json")
+    n_runs = args.runs
 
     all_results = []
 
-    # Run with claude-haiku (5 runs)
-    try:
-        results_haiku = run_baseline_for_instance(instance_path, "claude-haiku", n_runs=5)
-        all_results.extend(results_haiku)
-    except Exception as e:
-        print(f"ERROR with claude-haiku: {e}")
-
-    # Try codex/GPT-4o-mini (1 run as comparison)
-    print("\n" + "="*60)
-    print("Attempting GPT-4o-mini via codex exec ...")
-    print("Checking codex availability ...")
-    import subprocess
-    help_result = subprocess.run(
-        ["codex", "--help"], capture_output=True, text=True, timeout=15
-    )
-    print(f"codex --help returncode: {help_result.returncode}")
-    if help_result.returncode == 0:
-        # Try exec subcommand
-        exec_result = subprocess.run(
-            ["codex", "exec", "--help"], capture_output=True, text=True, timeout=15
-        )
-        print(f"codex exec --help returncode: {exec_result.returncode}")
-        print(f"codex exec --help stdout[:300]: {exec_result.stdout[:300]}")
-        if exec_result.returncode == 0:
-            try:
-                results_gpt = run_baseline_for_instance(instance_path, "gpt-4o-mini", n_runs=1)
-                all_results.extend(results_gpt)
-            except Exception as e:
-                print(f"ERROR with gpt-4o-mini: {e}")
-        else:
-            print("codex exec not available; skipping GPT-4o-mini run")
-            # Try -q syntax
-            print("Trying: codex -q 'hello' ...")
-            q_result = subprocess.run(
-                ["codex", "-q", "Say exactly: hello"],
-                capture_output=True, text=True, timeout=30
-            )
-            print(f"codex -q returncode: {q_result.returncode}")
-            print(f"stdout: {q_result.stdout[:200]}")
-            print(f"stderr: {q_result.stderr[:200]}")
+    if args.model:
+        # Single model run
+        try:
+            results = run_baseline_for_instance(instance_path, args.model, n_runs=n_runs)
+            all_results.extend(results)
+        except Exception as e:
+            print(f"ERROR with {args.model}: {e}")
     else:
-        print("codex not available; skipping GPT-4o-mini run")
+        # Run with claude-haiku (5 runs)
+        try:
+            results_haiku = run_baseline_for_instance(instance_path, "claude-haiku", n_runs=5)
+            all_results.extend(results_haiku)
+        except Exception as e:
+            print(f"ERROR with claude-haiku: {e}")
+
+        # Try codex/GPT-4o-mini (1 run as comparison)
+        print("\n" + "="*60)
+        print("Attempting GPT-4o-mini via codex exec ...")
+        print("Checking codex availability ...")
+        import subprocess
+        help_result = subprocess.run(
+            ["codex", "--help"], capture_output=True, text=True, timeout=15
+        )
+        print(f"codex --help returncode: {help_result.returncode}")
+        if help_result.returncode == 0:
+            # Try exec subcommand
+            exec_result = subprocess.run(
+                ["codex", "exec", "--help"], capture_output=True, text=True, timeout=15
+            )
+            print(f"codex exec --help returncode: {exec_result.returncode}")
+            print(f"codex exec --help stdout[:300]: {exec_result.stdout[:300]}")
+            if exec_result.returncode == 0:
+                try:
+                    results_gpt = run_baseline_for_instance(instance_path, "gpt-4o-mini", n_runs=1)
+                    all_results.extend(results_gpt)
+                except Exception as e:
+                    print(f"ERROR with gpt-4o-mini: {e}")
+            else:
+                print("codex exec not available; skipping GPT-4o-mini run")
+                # Try -q syntax
+                print("Trying: codex -q 'hello' ...")
+                q_result = subprocess.run(
+                    ["codex", "-q", "Say exactly: hello"],
+                    capture_output=True, text=True, timeout=30
+                )
+                print(f"codex -q returncode: {q_result.returncode}")
+                print(f"stdout: {q_result.stdout[:200]}")
+                print(f"stderr: {q_result.stderr[:200]}")
+        else:
+            print("codex not available; skipping GPT-4o-mini run")
 
     # Save results
-    output_path = str(RESULTS_DIR / "baseline_results.json")
     with open(output_path, "w") as f:
         json.dump(all_results, f, indent=2)
     print(f"\nResults saved to: {output_path}")

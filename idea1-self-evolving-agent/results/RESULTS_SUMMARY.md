@@ -144,7 +144,138 @@ All code is implemented and working end-to-end:
 
 ---
 
-## 6. Next Steps
+## 6. Extended Results (T=20)
+
+**Date:** 2026-05-22  
+**Instance:** `synthetic_small` (20 exams, 10 periods, 5 rooms, 200 students)  
+**Configuration:** T=20 iterations, formal vs. NL feedback, Claude Haiku vs. GPT-5.5
+
+---
+
+### GPT-5.5 Baseline (Zero-Shot, 5 runs)
+
+| Run | Violations | Feasible? | Assigned |
+|-----|-----------|-----------|---------|
+| 0 | 0 | **Yes** | 20/20 |
+| 1 | 0 | **Yes** | 20/20 |
+| 2 | 9 | No | 20/20 |
+| 3 | 11 | No | 20/20 |
+| 4 | 15 | No | 20/20 |
+
+- **Parse success:** 5/5 (100%)
+- **Feasible solutions:** 2/5 (40%)
+- **Average violations:** 7.0
+- **All violations:** student_conflict type
+
+**Comparison — Haiku vs. GPT-5.5 baseline:**
+
+| Model | Feasibility Rate | Avg Violations |
+|-------|-----------------|----------------|
+| Claude Haiku | 0/5 (0%) | 9.8 |
+| GPT-5.5 | 2/5 (40%) | 7.0 |
+
+GPT-5.5 is substantially stronger at zero-shot exam scheduling, achieving feasibility 40% of the time vs. 0% for Claude Haiku.
+
+---
+
+### Self-Evolving Loop: Violation Trajectories (T=20)
+
+#### Claude Haiku + Formal Feedback (20 iterations)
+
+| t | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |
+|---|---|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|----|----|
+| violations | 17 | 20 | 5 | 15 | 4 | 8 | 17 | 2 | 11 | 27 | 7 | 18 | 10 | 10 | 35 | 9 | 6 | 13 | 14 | 7 |
+
+- **First feasible:** Never (0/20 iterations feasible)
+- **Min violations:** 2 (at t=7)
+- **Final violations (t=19):** 7
+- **Feasibility rate:** 0%
+- **Trajectory pattern:** High oscillation (2–35), no convergence trend
+
+#### Claude Haiku + NL Feedback (20 iterations)
+
+| t | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |
+|---|---|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|----|----|
+| violations | 10 | 10 | 11 | 10 | 8 | 5 | 4 | 11 | 9 | 10 | 11 | 8 | 5 | 7 | 8 | 31 | 4 | 9 | 0 | 8 |
+
+- **First feasible:** t=18
+- **Min violations:** 0 (at t=18)
+- **Final violations (t=19):** 8 (regression after first feasible)
+- **Feasibility rate:** 1/20 (5%)
+- **Trajectory pattern:** Oscillates ~4–11, spike at t=15 (31), breakthrough at t=18
+
+#### GPT-5.5 + Formal Feedback (20 iterations)
+
+| t | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |
+|---|---|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|----|----|
+| violations | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+- **First feasible:** t=0
+- **Min violations:** 0
+- **Feasibility rate:** 20/20 (100%)
+- **Trajectory pattern:** Perfect from start — 0 violations every iteration
+
+#### GPT-5.5 + NL Feedback (17 iterations completed)
+
+| t | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 |
+|---|---|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|-----|
+| violations | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+- **First feasible:** t=0
+- **Min violations:** 0
+- **Feasibility rate:** 17/17 (100%) — loop stopped at t=16 due to process termination
+- **Trajectory pattern:** Perfect from start — 0 violations every iteration
+
+---
+
+### Extended Results Summary Table
+
+| Condition | First Feasible | Feasibility Rate | Final Violations | Min Violations |
+|-----------|---------------|-----------------|-----------------|----------------|
+| Claude Haiku + Formal | Never | 0/20 (0%) | 7 | 2 |
+| Claude Haiku + NL | t=18 | 1/20 (5%) | 8 | 0 |
+| GPT-5.5 + Formal | t=0 | 20/20 (100%) | 0 | 0 |
+| GPT-5.5 + NL | t=0 | 17/17 (100%) | 0 | 0 |
+
+---
+
+### Key Findings
+
+1. **GPT-5.5 dominates completely:** GPT-5.5 produces 0-violation feasible schedules from the very first iteration (t=0) in both feedback modes. The self-evolving loop adds no benefit — GPT-5.5 is already at the optimal solution every time.
+
+2. **Claude Haiku cannot reliably solve this instance:** Even after 20 iterations of formal or NL feedback, Claude Haiku rarely achieves feasibility (0% with formal, 5% with NL). The formal feedback produces high oscillation without convergence.
+
+3. **Feedback mode matters more for Haiku than GPT-5.5:** For Haiku, NL feedback (barely) outperforms formal at T=20 by achieving 1 feasible solution (at t=18) vs. 0 for formal. This is unexpected given the T=5 pilot, where formal appeared to be converging faster.
+
+4. **GPT-5.5 zero-shot baseline vs. loop:** GPT-5.5 baseline (zero-shot, no loop) achieves 40% feasibility. With the self-evolving loop, GPT-5.5 achieves 100% feasibility — the loop helps GPT-5.5 but the mechanism may be that the accumulated strategy context helps avoid randomness.
+
+5. **The synthetic_small instance may be too easy for GPT-5.5:** All GPT-5.5 loop results are 0 violations from t=0, suggesting the instance does not challenge GPT-5.5's capabilities. Harder instances (Purdue real data) are needed to test the self-evolving loop's value for stronger models.
+
+---
+
+### Purdue Dataset Download Status
+
+All 9 Purdue exam instances have been downloaded and extracted to `data/purdue_exam/`:
+
+| Instance | Semester | File |
+|----------|----------|------|
+| pu-exam-fal08 | Fall 2008 | `pu-exam-fal08.xml` (19 MB, 2198 exams) |
+| pu-exam-spr09 | Spring 2009 | `pu-exam-spr09.xml` |
+| pu-exam-fal09 | Fall 2009 | `pu-exam-fal09.xml` |
+| pu-exam-spr10 | Spring 2010 | `pu-exam-spr10.xml` |
+| pu-exam-fal10 | Fall 2010 | `pu-exam-fal10.xml` |
+| pu-exam-spr11 | Spring 2011 | `pu-exam-spr11.xml` |
+| pu-exam-fal11 | Fall 2011 | `pu-exam-fal11.xml` |
+| pu-exam-spr12 | Spring 2012 | `pu-exam-spr12.xml` |
+| pu-exam-fal12 | Fall 2012 | `pu-exam-fal12.xml` |
+
+Source: https://www.unitime.org/exam_datasets.php (downloaded via `pu-exam-mista13.zip`)
+
+All instances are large-scale (1000s of exams, 10,000s of students) and require chunked/hierarchical approaches for direct LLM scheduling. The synthetic_small instance (20 exams) continues to serve as the primary benchmark for loop experiments.
+
+---
+
+## 7. Next Steps
 
 ### Immediate (strengthen results)
 1. **Run T=20 iterations** for formal and NL — see if formal reaches feasibility

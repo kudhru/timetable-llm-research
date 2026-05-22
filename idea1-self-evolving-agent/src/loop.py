@@ -275,7 +275,7 @@ def main():
     parser = argparse.ArgumentParser(description="Self-evolving exam scheduling loop")
     parser.add_argument("--instance", required=True, help="Path to XML instance")
     parser.add_argument("--model", default="claude-haiku",
-                        choices=["claude-haiku", "claude-sonnet", "codex-default"])
+                        choices=["claude-haiku", "claude-sonnet", "codex-default", "gpt-5.5"])
     parser.add_argument("--feedback", default="formal", choices=["formal", "nl"])
     parser.add_argument("--iterations", type=int, default=5)
     parser.add_argument("--log-dir", default=None)

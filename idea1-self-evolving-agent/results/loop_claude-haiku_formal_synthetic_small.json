@@ -3,13 +3,43 @@
     "first_feasible_iter": null,
     "final_best_penalty": 0.0,
     "violation_trajectory": [
+      17,
+      20,
+      5,
+      15,
+      4,
+      8,
+      17,
+      2,
+      11,
+      27,
       7,
-      7,
+      18,
+      10,
+      10,
+      35,
       9,
       6,
-      35
+      13,
+      14,
+      7
     ],
     "penalty_trajectory": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      10.0,
+      2.0,
+      0.0,
       0.0,
       0.0,
       0.0,
@@ -17,7 +47,7 @@
       0.0
     ],
     "feasibility_rate": 0.0,
-    "total_iterations": 5,
+    "total_iterations": 20,
     "feasible_count": 0
   },
   "history": [
@@ -29,95 +59,7 @@
       "parse_success": true,
       "assigned_exams": 20,
       "total_exams": 20,
-      "num_violations": 7,
-      "penalty": 0.0,
-      "best_penalty": 0.0,
-      "feasible": false,
-      "violations": [
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E1",
-            "E3"
-          ],
-          "period_id": "2",
-          "shared_students": 15,
-          "description": "Exams E1 and E3 share 15 students but are in the same period 2"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E2",
-            "E15"
-          ],
-          "period_id": "6",
-          "shared_students": 1,
-          "description": "Exams E2 and E15 share 1 students but are in the same period 6"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E4",
-            "E5"
-          ],
-          "period_id": "3",
-          "shared_students": 12,
-          "description": "Exams E4 and E5 share 12 students but are in the same period 3"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E4",
-            "E12"
-          ],
-          "period_id": "3",
-          "shared_students": 10,
-          "description": "Exams E4 and E12 share 10 students but are in the same period 3"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E5",
-            "E12"
-          ],
-          "period_id": "3",
-          "shared_students": 2,
-          "description": "Exams E5 and E12 share 2 students but are in the same period 3"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E7",
-            "E18"
-          ],
-          "period_id": "8",
-          "shared_students": 6,
-          "description": "Exams E7 and E18 share 6 students but are in the same period 8"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E8",
-            "E17"
-          ],
-          "period_id": "5",
-          "shared_students": 15,
-          "description": "Exams E8 and E17 share 15 students but are in the same period 5"
-        }
-      ],
-      "strategy_update": "Build a conflict graph from student overlaps, then enforce strict separation by assigning conflicting exams to different periods. Spread high-conflict clusters across available periods early (periods 1-4 have capacity). For each exam, check all conflicts against existing period assignments before placement.",
-      "proposal_error": null,
-      "reflect_error": null
-    },
-    {
-      "iteration": 1,
-      "model": "claude-haiku",
-      "feedback_mode": "formal",
-      "instance": "synthetic_small",
-      "parse_success": true,
-      "assigned_exams": 20,
-      "total_exams": 20,
-      "num_violations": 7,
+      "num_violations": 17,
       "penalty": 0.0,
       "best_penalty": 0.0,
       "feasible": false,
@@ -126,127 +68,41 @@
           "type": "student_conflict",
           "exam_ids": [
             "E2",
-            "E5"
-          ],
-          "period_id": "1",
-          "shared_students": 5,
-          "description": "Exams E2 and E5 share 5 students but are in the same period 1"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E2",
-            "E10"
-          ],
-          "period_id": "1",
-          "shared_students": 1,
-          "description": "Exams E2 and E10 share 1 students but are in the same period 1"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E3",
-            "E8"
-          ],
-          "period_id": "2",
-          "shared_students": 15,
-          "description": "Exams E3 and E8 share 15 students but are in the same period 2"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E4",
             "E9"
           ],
-          "period_id": "3",
-          "shared_students": 4,
-          "description": "Exams E4 and E9 share 4 students but are in the same period 3"
+          "period_id": "2",
+          "shared_students": 11,
+          "description": "Exams E2 and E9 share 11 students but are in the same period 2"
         },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E6",
-            "E12"
-          ],
-          "period_id": "6",
-          "shared_students": 12,
-          "description": "Exams E6 and E12 share 12 students but are in the same period 6"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E11",
-            "E14"
-          ],
-          "period_id": "7",
-          "shared_students": 8,
-          "description": "Exams E11 and E14 share 8 students but are in the same period 7"
-        },
-        {
-          "type": "unavailable_room",
-          "exam_ids": [
-            "E8"
-          ],
-          "room_id": "R1",
-          "description": "Exam E8 assigned to room R1 which is not in its available rooms"
-        }
-      ],
-      "strategy_update": "Apply conflict detection before assignment: build a conflict graph where exams are vertices and edges represent shared students. Use graph-coloring to ensure conflicting exams receive different period assignments. For exams with multiple conflicts (like E7 with E8 and E9), prioritize separation across distinct periods rather than room changes.",
-      "proposal_error": null,
-      "reflect_error": null
-    },
-    {
-      "iteration": 2,
-      "model": "claude-haiku",
-      "feedback_mode": "formal",
-      "instance": "synthetic_small",
-      "parse_success": true,
-      "assigned_exams": 20,
-      "total_exams": 20,
-      "num_violations": 9,
-      "penalty": 0.0,
-      "best_penalty": 0.0,
-      "feasible": false,
-      "violations": [
         {
           "type": "student_conflict",
           "exam_ids": [
             "E2",
-            "E7"
+            "E16"
           ],
-          "period_id": "8",
-          "shared_students": 12,
-          "description": "Exams E2 and E7 share 12 students but are in the same period 8"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E7",
-            "E13"
-          ],
-          "period_id": "8",
-          "shared_students": 1,
-          "description": "Exams E7 and E13 share 1 students but are in the same period 8"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E7",
-            "E19"
-          ],
-          "period_id": "8",
-          "shared_students": 8,
-          "description": "Exams E7 and E19 share 8 students but are in the same period 8"
+          "period_id": "2",
+          "shared_students": 2,
+          "description": "Exams E2 and E16 share 2 students but are in the same period 2"
         },
         {
           "type": "student_conflict",
           "exam_ids": [
             "E9",
-            "E15"
+            "E16"
+          ],
+          "period_id": "2",
+          "shared_students": 9,
+          "description": "Exams E9 and E16 share 9 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E11"
           ],
           "period_id": "3",
-          "shared_students": 11,
-          "description": "Exams E9 and E15 share 11 students but are in the same period 3"
+          "shared_students": 14,
+          "description": "Exams E3 and E11 share 14 students but are in the same period 3"
         },
         {
           "type": "student_conflict",
@@ -261,30 +117,107 @@
         {
           "type": "student_conflict",
           "exam_ids": [
-            "E8",
-            "E17"
+            "E5",
+            "E6"
           ],
-          "period_id": "4",
-          "shared_students": 15,
-          "description": "Exams E8 and E17 share 15 students but are in the same period 4"
+          "period_id": "5",
+          "shared_students": 13,
+          "description": "Exams E5 and E6 share 13 students but are in the same period 5"
         },
         {
           "type": "student_conflict",
           "exam_ids": [
             "E5",
-            "E6"
+            "E17"
           ],
-          "period_id": "1",
-          "shared_students": 13,
-          "description": "Exams E5 and E6 share 13 students but are in the same period 1"
+          "period_id": "5",
+          "shared_students": 4,
+          "description": "Exams E5 and E17 share 4 students but are in the same period 5"
         },
         {
-          "type": "unavailable_period",
+          "type": "student_conflict",
           "exam_ids": [
-            "E6"
+            "E6",
+            "E17"
           ],
-          "period_id": "1",
-          "description": "Exam E6 assigned to period 1 which is not in its available periods"
+          "period_id": "5",
+          "shared_students": 1,
+          "description": "Exams E6 and E17 share 1 students but are in the same period 5"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E18"
+          ],
+          "period_id": "6",
+          "shared_students": 6,
+          "description": "Exams E7 and E18 share 6 students but are in the same period 6"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E11"
+          ],
+          "student_count": 48,
+          "total_capacity": 40,
+          "room_ids": [
+            "R2"
+          ],
+          "description": "Exam E11 has 48 students but assigned rooms ['R2'] hold only 40"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E5"
+          ],
+          "room_id": "R1",
+          "description": "Exam E5 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E11"
+          ],
+          "room_id": "R2",
+          "description": "Exam E11 assigned to room R2 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E12"
+          ],
+          "room_id": "R2",
+          "description": "Exam E12 assigned to room R2 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E16"
+          ],
+          "room_id": "R3",
+          "description": "Exam E16 assigned to room R3 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E17"
+          ],
+          "room_id": "R4",
+          "description": "Exam E17 assigned to room R4 which is not in its available rooms"
+        },
+        {
+          "type": "distribution_same_period",
+          "constraint_id": "C1",
+          "exam_ids": [
+            "E10",
+            "E20"
+          ],
+          "periods_used": [
+            "4",
+            "2"
+          ],
+          "description": "Constraint C1 (same-period): exams ['E10', 'E20'] are in different periods ['4', '2']"
         },
         {
           "type": "distribution_precedence",
@@ -293,10 +226,282 @@
             "E5",
             "E6"
           ],
-          "description": "Constraint C2 (precedence): exam E5 in period 1 must come before exam E6 in period 1"
+          "description": "Constraint C2 (precedence): exam E5 in period 5 must come before exam E6 in period 5"
         }
       ],
-      "strategy_update": "Build an explicit student conflict graph from enrollment data before period assignment. Treat this as a graph k-coloring problem where each exam is a node, edges connect exams with shared students, and colors represent periods. Ensure no two adjacent nodes (conflicting exams) receive the same color. Assign rooms only after valid period separation is confirmed.",
+      "strategy_update": "Build a complete conflict graph from student overlaps. Solve as a graph coloring problem to ensure no two conflicting exams occupy the same period. For synthetic_small, the chromatic number is 3, but distribute across available 7 periods to enable flexible room assignments. Verify each period's assignment against the full conflict graph before finalizing.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 1,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 20,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E1",
+            "E5"
+          ],
+          "period_id": "1",
+          "shared_students": 6,
+          "description": "Exams E1 and E5 share 6 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E15"
+          ],
+          "period_id": "2",
+          "shared_students": 1,
+          "description": "Exams E2 and E15 share 1 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E7"
+          ],
+          "period_id": "3",
+          "shared_students": 17,
+          "description": "Exams E3 and E7 share 17 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E6"
+          ],
+          "period_id": "4",
+          "shared_students": 21,
+          "description": "Exams E4 and E6 share 21 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E8",
+            "E12"
+          ],
+          "period_id": "5",
+          "shared_students": 1,
+          "description": "Exams E8 and E12 share 1 students but are in the same period 5"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E14"
+          ],
+          "period_id": "6",
+          "shared_students": 8,
+          "description": "Exams E11 and E14 share 8 students but are in the same period 6"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E17",
+            "E19"
+          ],
+          "period_id": "8",
+          "shared_students": 2,
+          "description": "Exams E17 and E19 share 2 students but are in the same period 8"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E4"
+          ],
+          "student_count": 63,
+          "total_capacity": 30,
+          "room_ids": [
+            "R4"
+          ],
+          "description": "Exam E4 has 63 students but assigned rooms ['R4'] hold only 30"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E7"
+          ],
+          "student_count": 44,
+          "total_capacity": 40,
+          "room_ids": [
+            "R2"
+          ],
+          "description": "Exam E7 has 44 students but assigned rooms ['R2'] hold only 40"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E19"
+          ],
+          "student_count": 32,
+          "total_capacity": 30,
+          "room_ids": [
+            "R4"
+          ],
+          "description": "Exam E19 has 32 students but assigned rooms ['R4'] hold only 30"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E4"
+          ],
+          "room_id": "R4",
+          "description": "Exam E4 assigned to room R4 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E6"
+          ],
+          "room_id": "R1",
+          "description": "Exam E6 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E10"
+          ],
+          "room_id": "R5",
+          "description": "Exam E10 assigned to room R5 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E11"
+          ],
+          "room_id": "R1",
+          "description": "Exam E11 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E12"
+          ],
+          "room_id": "R2",
+          "description": "Exam E12 assigned to room R2 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E14"
+          ],
+          "room_id": "R4",
+          "description": "Exam E14 assigned to room R4 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E15"
+          ],
+          "room_id": "R5",
+          "description": "Exam E15 assigned to room R5 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E17"
+          ],
+          "room_id": "R2",
+          "description": "Exam E17 assigned to room R2 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E18"
+          ],
+          "room_id": "R3",
+          "description": "Exam E18 assigned to room R3 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E19"
+          ],
+          "room_id": "R4",
+          "description": "Exam E19 assigned to room R4 which is not in its available rooms"
+        }
+      ],
+      "strategy_update": "Build a student-conflict graph and apply greedy graph coloring before assignment. For each exam, assign it to the lowest-numbered available period where no conflicting exam (one sharing students) is already scheduled. Enforce period separation for all 10 conflict pairs identified. Reuse rooms across different periods since they do not overlap in time.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 2,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 5,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E10"
+          ],
+          "period_id": "4",
+          "shared_students": 1,
+          "description": "Exams E2 and E10 share 1 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E11"
+          ],
+          "period_id": "2",
+          "shared_students": 14,
+          "description": "Exams E3 and E11 share 14 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E9",
+            "E11"
+          ],
+          "period_id": "2",
+          "shared_students": 8,
+          "description": "Exams E9 and E11 share 8 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E13"
+          ],
+          "period_id": "7",
+          "shared_students": 10,
+          "description": "Exams E4 and E13 share 10 students but are in the same period 7"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E19"
+          ],
+          "period_id": "8",
+          "shared_students": 8,
+          "description": "Exams E7 and E19 share 8 students but are in the same period 8"
+        }
+      ],
+      "strategy_update": "Implement constraint-aware graph coloring: (1) Extract the conflict graph from student enrollment data, (2) For each conflict cluster, assign periods such that no two conflicting exams share a period (chromatic number approach), (3) Prioritize separating high-conflict exams (E1, E3, E2, E15 appear in 3-4 violations each), (4) Assign rooms after confirming period validity",
       "proposal_error": null,
       "reflect_error": null
     },
@@ -308,7 +513,7 @@
       "parse_success": true,
       "assigned_exams": 20,
       "total_exams": 20,
-      "num_violations": 6,
+      "num_violations": 15,
       "penalty": 0.0,
       "best_penalty": 0.0,
       "feasible": false,
@@ -316,22 +521,42 @@
         {
           "type": "student_conflict",
           "exam_ids": [
-            "E4",
-            "E9"
+            "E1",
+            "E7"
           ],
-          "period_id": "6",
-          "shared_students": 4,
-          "description": "Exams E4 and E9 share 4 students but are in the same period 6"
+          "period_id": "1",
+          "shared_students": 14,
+          "description": "Exams E1 and E7 share 14 students but are in the same period 1"
         },
         {
           "type": "student_conflict",
           "exam_ids": [
-            "E6",
-            "E12"
+            "E1",
+            "E11"
           ],
-          "period_id": "7",
-          "shared_students": 12,
-          "description": "Exams E6 and E12 share 12 students but are in the same period 7"
+          "period_id": "1",
+          "shared_students": 3,
+          "description": "Exams E1 and E11 share 3 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E8"
+          ],
+          "period_id": "1",
+          "shared_students": 3,
+          "description": "Exams E7 and E8 share 3 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E11"
+          ],
+          "period_id": "1",
+          "shared_students": 7,
+          "description": "Exams E7 and E11 share 7 students but are in the same period 1"
         },
         {
           "type": "student_conflict",
@@ -339,9 +564,19 @@
             "E7",
             "E14"
           ],
-          "period_id": "8",
+          "period_id": "1",
           "shared_students": 3,
-          "description": "Exams E7 and E14 share 3 students but are in the same period 8"
+          "description": "Exams E7 and E14 share 3 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E19"
+          ],
+          "period_id": "1",
+          "shared_students": 8,
+          "description": "Exams E7 and E19 share 8 students but are in the same period 1"
         },
         {
           "type": "student_conflict",
@@ -349,32 +584,90 @@
             "E8",
             "E11"
           ],
-          "period_id": "2",
+          "period_id": "1",
           "shared_students": 1,
-          "description": "Exams E8 and E11 share 1 students but are in the same period 2"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E8",
-            "E17"
-          ],
-          "period_id": "2",
-          "shared_students": 15,
-          "description": "Exams E8 and E17 share 15 students but are in the same period 2"
+          "description": "Exams E8 and E11 share 1 students but are in the same period 1"
         },
         {
           "type": "student_conflict",
           "exam_ids": [
             "E11",
-            "E17"
+            "E14"
+          ],
+          "period_id": "1",
+          "shared_students": 8,
+          "description": "Exams E11 and E14 share 8 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E15"
+          ],
+          "period_id": "1",
+          "shared_students": 4,
+          "description": "Exams E11 and E15 share 4 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E16"
+          ],
+          "period_id": "1",
+          "shared_students": 1,
+          "description": "Exams E11 and E16 share 1 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E19"
+          ],
+          "period_id": "1",
+          "shared_students": 12,
+          "description": "Exams E11 and E19 share 12 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E14",
+            "E19"
+          ],
+          "period_id": "1",
+          "shared_students": 3,
+          "description": "Exams E14 and E19 share 3 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E15",
+            "E16"
+          ],
+          "period_id": "1",
+          "shared_students": 12,
+          "description": "Exams E15 and E16 share 12 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E9"
           ],
           "period_id": "2",
-          "shared_students": 5,
-          "description": "Exams E11 and E17 share 5 students but are in the same period 2"
+          "shared_students": 11,
+          "description": "Exams E2 and E9 share 11 students but are in the same period 2"
+        },
+        {
+          "type": "unavailable_period",
+          "exam_ids": [
+            "E16"
+          ],
+          "period_id": "1",
+          "description": "Exam E16 assigned to period 1 which is not in its available periods"
         }
       ],
-      "strategy_update": "Use a conflict-aware round-robin assignment: (1) Group exams with the highest degree of conflicts. (2) Distribute each group across non-consecutive periods to maximize separation. (3) Respect distribution constraints (C1: E10-E20 same period, C2: E5 before E6, C3: E3-E4 different). (4) Verify no two exams sharing \u22651 student occupy the same period. (5) Assign rooms matching capacity and availability.",
+      "strategy_update": "Build a conflict graph from student overlaps. Use graph coloring to ensure conflicting exams occupy different periods. For chains like E1-E9-E15, spread across \u22652 periods (E1\u2192P1, E9\u2192P2, E15\u2192P1 works since E1-E15 don't conflict). Apply before room assignment to avoid period-room coupling.",
       "proposal_error": null,
       "reflect_error": null
     },
@@ -386,7 +679,165 @@
       "parse_success": true,
       "assigned_exams": 20,
       "total_exams": 20,
-      "num_violations": 35,
+      "num_violations": 4,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E17",
+            "E19"
+          ],
+          "period_id": "5",
+          "shared_students": 2,
+          "description": "Exams E17 and E19 share 2 students but are in the same period 5"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E12"
+          ],
+          "period_id": "4",
+          "shared_students": 10,
+          "description": "Exams E4 and E12 share 10 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E11"
+          ],
+          "period_id": "1",
+          "shared_students": 7,
+          "description": "Exams E7 and E11 share 7 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E8",
+            "E18"
+          ],
+          "period_id": "7",
+          "shared_students": 3,
+          "description": "Exams E8 and E18 share 3 students but are in the same period 7"
+        }
+      ],
+      "strategy_update": "Implement constraint-aware greedy coloring: (1) Build conflict graph where edges connect exams sharing \u22651 student; (2) Sort exams by conflict degree (descending) to handle high-conflict exams first; (3) For each exam, assign to earliest available period not occupied by any conflicting exam; (4) Respect exam-specific period/room availability constraints; (5) Ensure assigned rooms have sufficient capacity; (6) Prioritize satisfying the C1 distribution constraint (E10, E20 in same period).",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 5,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 8,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E1",
+            "E4"
+          ],
+          "period_id": "6",
+          "shared_students": 5,
+          "description": "Exams E1 and E4 share 5 students but are in the same period 6"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E16"
+          ],
+          "period_id": "4",
+          "shared_students": 2,
+          "description": "Exams E2 and E16 share 2 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E5",
+            "E7"
+          ],
+          "period_id": "2",
+          "shared_students": 2,
+          "description": "Exams E5 and E7 share 2 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E5",
+            "E8"
+          ],
+          "period_id": "2",
+          "shared_students": 18,
+          "description": "Exams E5 and E8 share 18 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E8"
+          ],
+          "period_id": "2",
+          "shared_students": 3,
+          "description": "Exams E7 and E8 share 3 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E14",
+            "E20"
+          ],
+          "period_id": "5",
+          "shared_students": 1,
+          "description": "Exams E14 and E20 share 1 students but are in the same period 5"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E12"
+          ],
+          "period_id": "7",
+          "shared_students": 2,
+          "description": "Exams E11 and E12 share 2 students but are in the same period 7"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E7"
+          ],
+          "student_count": 44,
+          "total_capacity": 40,
+          "room_ids": [
+            "R2"
+          ],
+          "description": "Exam E7 has 44 students but assigned rooms ['R2'] hold only 40"
+        }
+      ],
+      "strategy_update": "Enforce hard distribution constraints first (C1: E10+E20 same period, C2: E5 before E6, C3: E3\u2260E4). Build student conflict graph by scanning enrollments. Use greedy graph coloring: assign high-conflict exams (E11, E7, E3, E4, E2) to separate periods. Place large exams (E18, E8, E19, E17) in non-overlapping slots. Verify room capacity and period/room availability for each assignment before committing.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 6,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 17,
       "penalty": 0.0,
       "best_penalty": 0.0,
       "feasible": false,
@@ -401,6 +852,1056 @@
           "shared_students": 18,
           "description": "Exams E1 and E2 share 18 students but are in the same period 1"
         },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E1",
+            "E3"
+          ],
+          "period_id": "1",
+          "shared_students": 15,
+          "description": "Exams E1 and E3 share 15 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E1",
+            "E11"
+          ],
+          "period_id": "1",
+          "shared_students": 3,
+          "description": "Exams E1 and E11 share 3 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E3"
+          ],
+          "period_id": "1",
+          "shared_students": 7,
+          "description": "Exams E2 and E3 share 7 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E11"
+          ],
+          "period_id": "1",
+          "shared_students": 3,
+          "description": "Exams E2 and E11 share 3 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E15"
+          ],
+          "period_id": "1",
+          "shared_students": 1,
+          "description": "Exams E2 and E15 share 1 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E11"
+          ],
+          "period_id": "1",
+          "shared_students": 14,
+          "description": "Exams E3 and E11 share 14 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E15"
+          ],
+          "period_id": "1",
+          "shared_students": 4,
+          "description": "Exams E11 and E15 share 4 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E6"
+          ],
+          "period_id": "4",
+          "shared_students": 21,
+          "description": "Exams E4 and E6 share 21 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E5",
+            "E7"
+          ],
+          "period_id": "2",
+          "shared_students": 2,
+          "description": "Exams E5 and E7 share 2 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E5",
+            "E8"
+          ],
+          "period_id": "2",
+          "shared_students": 18,
+          "description": "Exams E5 and E8 share 18 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E8"
+          ],
+          "period_id": "2",
+          "shared_students": 3,
+          "description": "Exams E7 and E8 share 3 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E14"
+          ],
+          "period_id": "2",
+          "shared_students": 3,
+          "description": "Exams E7 and E14 share 3 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E18"
+          ],
+          "period_id": "2",
+          "shared_students": 6,
+          "description": "Exams E7 and E18 share 6 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E8",
+            "E18"
+          ],
+          "period_id": "2",
+          "shared_students": 3,
+          "description": "Exams E8 and E18 share 3 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E12",
+            "E13"
+          ],
+          "period_id": "3",
+          "shared_students": 6,
+          "description": "Exams E12 and E13 share 6 students but are in the same period 3"
+        },
+        {
+          "type": "distribution_same_period",
+          "constraint_id": "C1",
+          "exam_ids": [
+            "E10",
+            "E20"
+          ],
+          "periods_used": [
+            "7",
+            "5"
+          ],
+          "description": "Constraint C1 (same-period): exams ['E10', 'E20'] are in different periods ['7', '5']"
+        }
+      ],
+      "strategy_update": "Apply graph coloring: (1) Build a conflict graph where nodes are exams and edges connect exams sharing students. (2) Color the graph using available periods such that no two conflicting exams receive the same color. (3) For independent exam groups with no shared students, group them efficiently. (4) Assign rooms respecting capacity constraints, using existing room assignments where valid.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 7,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 2,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E20"
+          ],
+          "period_id": "4",
+          "shared_students": 1,
+          "description": "Exams E4 and E20 share 1 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E11"
+          ],
+          "period_id": "7",
+          "shared_students": 7,
+          "description": "Exams E7 and E11 share 7 students but are in the same period 7"
+        }
+      ],
+      "strategy_update": "1. First, assign E10 and E20 to the same valid period (C1 constraint) in range 1-8. 2. Separate all conflicting exam pairs by moving one exam per pair to a different period. 3. For each reassignment, verify no new student conflicts are created in the target period. 4. Always respect available periods and room capacity constraints.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 8,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 11,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E5"
+          ],
+          "period_id": "7",
+          "shared_students": 5,
+          "description": "Exams E2 and E5 share 5 students but are in the same period 7"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E15"
+          ],
+          "period_id": "7",
+          "shared_students": 1,
+          "description": "Exams E2 and E15 share 1 students but are in the same period 7"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E12"
+          ],
+          "period_id": "3",
+          "shared_students": 10,
+          "description": "Exams E4 and E12 share 10 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E6",
+            "E17"
+          ],
+          "period_id": "8",
+          "shared_students": 1,
+          "description": "Exams E6 and E17 share 1 students but are in the same period 8"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E17",
+            "E19"
+          ],
+          "period_id": "8",
+          "shared_students": 2,
+          "description": "Exams E17 and E19 share 2 students but are in the same period 8"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E8",
+            "E13"
+          ],
+          "period_id": "6",
+          "shared_students": 1,
+          "description": "Exams E8 and E13 share 1 students but are in the same period 6"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E14"
+          ],
+          "period_id": "5",
+          "shared_students": 8,
+          "description": "Exams E11 and E14 share 8 students but are in the same period 5"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E8"
+          ],
+          "room_id": "R2",
+          "description": "Exam E8 assigned to room R2 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E12"
+          ],
+          "room_id": "R1",
+          "description": "Exam E12 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E17"
+          ],
+          "room_id": "R1",
+          "description": "Exam E17 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E19"
+          ],
+          "room_id": "R2",
+          "description": "Exam E19 assigned to room R2 which is not in its available rooms"
+        }
+      ],
+      "strategy_update": "Build a student-conflict graph from enrollment data. Before assigning an exam to a period, verify that no already-assigned exam in that period shares students with it. If a conflict is detected, relocate one of the conflicting exams to an alternative available period.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 9,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 27,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E1",
+            "E5"
+          ],
+          "period_id": "1",
+          "shared_students": 6,
+          "description": "Exams E1 and E5 share 6 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E1",
+            "E7"
+          ],
+          "period_id": "1",
+          "shared_students": 14,
+          "description": "Exams E1 and E7 share 14 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E5",
+            "E6"
+          ],
+          "period_id": "1",
+          "shared_students": 13,
+          "description": "Exams E5 and E6 share 13 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E5",
+            "E7"
+          ],
+          "period_id": "1",
+          "shared_students": 2,
+          "description": "Exams E5 and E7 share 2 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E6",
+            "E7"
+          ],
+          "period_id": "1",
+          "shared_students": 3,
+          "description": "Exams E6 and E7 share 3 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E3"
+          ],
+          "period_id": "6",
+          "shared_students": 7,
+          "description": "Exams E2 and E3 share 7 students but are in the same period 6"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E9"
+          ],
+          "period_id": "6",
+          "shared_students": 11,
+          "description": "Exams E2 and E9 share 11 students but are in the same period 6"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E12"
+          ],
+          "period_id": "2",
+          "shared_students": 10,
+          "description": "Exams E4 and E12 share 10 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E13"
+          ],
+          "period_id": "2",
+          "shared_students": 10,
+          "description": "Exams E4 and E13 share 10 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E12",
+            "E13"
+          ],
+          "period_id": "2",
+          "shared_students": 6,
+          "description": "Exams E12 and E13 share 6 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E8",
+            "E11"
+          ],
+          "period_id": "3",
+          "shared_students": 1,
+          "description": "Exams E8 and E11 share 1 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E10",
+            "E11"
+          ],
+          "period_id": "3",
+          "shared_students": 4,
+          "description": "Exams E10 and E11 share 4 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E19",
+            "E20"
+          ],
+          "period_id": "4",
+          "shared_students": 17,
+          "description": "Exams E19 and E20 share 17 students but are in the same period 4"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E7"
+          ],
+          "student_count": 44,
+          "total_capacity": 30,
+          "room_ids": [
+            "R4"
+          ],
+          "description": "Exam E7 has 44 students but assigned rooms ['R4'] hold only 30"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E18"
+          ],
+          "student_count": 31,
+          "total_capacity": 30,
+          "room_ids": [
+            "R4"
+          ],
+          "description": "Exam E18 has 31 students but assigned rooms ['R4'] hold only 30"
+        },
+        {
+          "type": "unavailable_period",
+          "exam_ids": [
+            "E6"
+          ],
+          "period_id": "1",
+          "description": "Exam E6 assigned to period 1 which is not in its available periods"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E2"
+          ],
+          "room_id": "R5",
+          "description": "Exam E2 assigned to room R5 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E3"
+          ],
+          "room_id": "R1",
+          "description": "Exam E3 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E6"
+          ],
+          "room_id": "R1",
+          "description": "Exam E6 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E7"
+          ],
+          "room_id": "R4",
+          "description": "Exam E7 assigned to room R4 which is not in its available rooms"
+        }
+      ],
+      "strategy_update": "Use conflict-avoidance assignment: (1) Identify all exam pairs sharing students as a conflict graph, (2) Apply graph coloring to assign exams to periods such that no two conflicting exams occupy the same period, (3) Distribute exams across periods and rooms to balance load, (4) Prioritize separating high-degree conflict exams (E10, E15, E16) across different periods.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 10,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 7,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E7"
+          ],
+          "period_id": "3",
+          "shared_students": 12,
+          "description": "Exams E2 and E7 share 12 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E12"
+          ],
+          "period_id": "3",
+          "shared_students": 2,
+          "description": "Exams E7 and E12 share 2 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E18"
+          ],
+          "period_id": "8",
+          "shared_students": 2,
+          "description": "Exams E3 and E18 share 2 students but are in the same period 8"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E14"
+          ],
+          "period_id": "4",
+          "shared_students": 5,
+          "description": "Exams E4 and E14 share 5 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E9",
+            "E11"
+          ],
+          "period_id": "5",
+          "shared_students": 8,
+          "description": "Exams E9 and E11 share 8 students but are in the same period 5"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E19"
+          ],
+          "period_id": "5",
+          "shared_students": 12,
+          "description": "Exams E11 and E19 share 12 students but are in the same period 5"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E7"
+          ],
+          "student_count": 44,
+          "total_capacity": 40,
+          "room_ids": [
+            "R2"
+          ],
+          "description": "Exam E7 has 44 students but assigned rooms ['R2'] hold only 40"
+        }
+      ],
+      "strategy_update": "1) Enforce hard constraints absolutely: E10 and E20 must be in same period; E5 must come before E6; E3 and E4 must be in different periods. 2) Build conflict separation: identify exam pairs sharing students and assign to different periods, prioritizing pairs with 10+ conflicts. 3) Allocate large exams (E18:60, E8:55, E19:52, E3:50, E17:48) to sufficient room capacity (R3, R5). 4) Respect period availability: some exams not available in certain periods (e.g., E13 unavailable in period 4, E5 unavailable in period 8). 5) Greedy placement: assign high-conflict exams first to spread them across periods, then fill remaining slots.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 11,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 18,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E1",
+            "E2"
+          ],
+          "period_id": "1",
+          "shared_students": 18,
+          "description": "Exams E1 and E2 share 18 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E1",
+            "E7"
+          ],
+          "period_id": "1",
+          "shared_students": 14,
+          "description": "Exams E1 and E7 share 14 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E7"
+          ],
+          "period_id": "1",
+          "shared_students": 12,
+          "description": "Exams E2 and E7 share 12 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E10"
+          ],
+          "period_id": "1",
+          "shared_students": 1,
+          "description": "Exams E2 and E10 share 1 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E20"
+          ],
+          "period_id": "1",
+          "shared_students": 6,
+          "description": "Exams E7 and E20 share 6 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E4"
+          ],
+          "period_id": "2",
+          "shared_students": 18,
+          "description": "Exams E3 and E4 share 18 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E8",
+            "E11"
+          ],
+          "period_id": "5",
+          "shared_students": 1,
+          "description": "Exams E8 and E11 share 1 students but are in the same period 5"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E14",
+            "E19"
+          ],
+          "period_id": "6",
+          "shared_students": 3,
+          "description": "Exams E14 and E19 share 3 students but are in the same period 6"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E18",
+            "E19"
+          ],
+          "period_id": "6",
+          "shared_students": 16,
+          "description": "Exams E18 and E19 share 16 students but are in the same period 6"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E5"
+          ],
+          "room_id": "R1",
+          "description": "Exam E5 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E6"
+          ],
+          "room_id": "R1",
+          "description": "Exam E6 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E10"
+          ],
+          "room_id": "R5",
+          "description": "Exam E10 assigned to room R5 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E11"
+          ],
+          "room_id": "R1",
+          "description": "Exam E11 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E16"
+          ],
+          "room_id": "R3",
+          "description": "Exam E16 assigned to room R3 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E19"
+          ],
+          "room_id": "R1",
+          "description": "Exam E19 assigned to room R1 which is not in its available rooms"
+        },
+        {
+          "type": "unavailable_room",
+          "exam_ids": [
+            "E20"
+          ],
+          "room_id": "R2",
+          "description": "Exam E20 assigned to room R2 which is not in its available rooms"
+        },
+        {
+          "type": "distribution_precedence",
+          "constraint_id": "C2",
+          "exam_ids": [
+            "E5",
+            "E6"
+          ],
+          "description": "Constraint C2 (precedence): exam E5 in period 4 must come before exam E6 in period 3"
+        },
+        {
+          "type": "distribution_different_period",
+          "constraint_id": "C3",
+          "exam_ids": [
+            "E3",
+            "E4"
+          ],
+          "period_id": "2",
+          "description": "Constraint C3 (different-period): exams ['E3', 'E4'] are all in period 2"
+        }
+      ],
+      "strategy_update": "Implement conflict-aware period assignment using graph coloring: (1) Build a conflict graph from student enrollment data. (2) Identify all exam cliques (fully-connected groups). (3) Assign conflicting exams to different periods: 3-cliques need \u22653 periods, 2-conflicts need \u22652 periods. (4) Distribute non-conflicting exams to fill remaining capacity. (5) Verify no two exams in any period share students before finalizing.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 12,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 10,
+      "penalty": 10.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E10",
+            "E15"
+          ],
+          "period_id": "1",
+          "shared_students": 15,
+          "description": "Exams E10 and E15 share 15 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E3"
+          ],
+          "period_id": "4",
+          "shared_students": 7,
+          "description": "Exams E2 and E3 share 7 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E5",
+            "E13"
+          ],
+          "period_id": "2",
+          "shared_students": 4,
+          "description": "Exams E5 and E13 share 4 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E9"
+          ],
+          "period_id": "6",
+          "shared_students": 3,
+          "description": "Exams E7 and E9 share 3 students but are in the same period 6"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E16"
+          ],
+          "period_id": "8",
+          "shared_students": 1,
+          "description": "Exams E11 and E16 share 1 students but are in the same period 8"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E18",
+            "E19"
+          ],
+          "period_id": "10",
+          "shared_students": 16,
+          "description": "Exams E18 and E19 share 16 students but are in the same period 10"
+        },
+        {
+          "type": "unavailable_period",
+          "exam_ids": [
+            "E12"
+          ],
+          "period_id": "9",
+          "description": "Exam E12 assigned to period 9 which is not in its available periods"
+        },
+        {
+          "type": "unavailable_period",
+          "exam_ids": [
+            "E17"
+          ],
+          "period_id": "9",
+          "description": "Exam E17 assigned to period 9 which is not in its available periods"
+        },
+        {
+          "type": "unavailable_period",
+          "exam_ids": [
+            "E18"
+          ],
+          "period_id": "10",
+          "description": "Exam E18 assigned to period 10 which is not in its available periods"
+        },
+        {
+          "type": "unavailable_period",
+          "exam_ids": [
+            "E19"
+          ],
+          "period_id": "10",
+          "description": "Exam E19 assigned to period 10 which is not in its available periods"
+        }
+      ],
+      "strategy_update": "1. Build a complete conflict graph by identifying all exam pairs that share enrolled students. 2. Use constraint-aware placement: honor hard constraints (E10+E20 same period, E5 before E6, E3 \u2260 E4 periods) while keeping conflicting exams in different periods. 3. For high-conflict exams (E2, E4, E8, E11, E12), space them across separate periods. 4. Validate room assignments against available rooms before placing exams.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 13,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 10,
+      "penalty": 2.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E1",
+            "E3"
+          ],
+          "period_id": "4",
+          "shared_students": 15,
+          "description": "Exams E1 and E3 share 15 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E15"
+          ],
+          "period_id": "6",
+          "shared_students": 1,
+          "description": "Exams E2 and E15 share 1 students but are in the same period 6"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E13"
+          ],
+          "period_id": "7",
+          "shared_students": 1,
+          "description": "Exams E7 and E13 share 1 students but are in the same period 7"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E8",
+            "E11"
+          ],
+          "period_id": "8",
+          "shared_students": 1,
+          "description": "Exams E8 and E11 share 1 students but are in the same period 8"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E8",
+            "E18"
+          ],
+          "period_id": "8",
+          "shared_students": 3,
+          "description": "Exams E8 and E18 share 3 students but are in the same period 8"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E18"
+          ],
+          "period_id": "8",
+          "shared_students": 6,
+          "description": "Exams E11 and E18 share 6 students but are in the same period 8"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E14",
+            "E20"
+          ],
+          "period_id": "1",
+          "shared_students": 1,
+          "description": "Exams E14 and E20 share 1 students but are in the same period 1"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E7"
+          ],
+          "student_count": 44,
+          "total_capacity": 40,
+          "room_ids": [
+            "R2"
+          ],
+          "description": "Exam E7 has 44 students but assigned rooms ['R2'] hold only 40"
+        },
+        {
+          "type": "unavailable_period",
+          "exam_ids": [
+            "E12"
+          ],
+          "period_id": "9",
+          "description": "Exam E12 assigned to period 9 which is not in its available periods"
+        },
+        {
+          "type": "unavailable_period",
+          "exam_ids": [
+            "E17"
+          ],
+          "period_id": "9",
+          "description": "Exam E17 assigned to period 9 which is not in its available periods"
+        }
+      ],
+      "strategy_update": "Build conflict graph from student enrollments; separate conflicting pairs; respect availability constraints; maintain hard constraints (E10-E20 same, E5\u2192E6 order, E3\u2260E4); prioritize periods 1-8.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 14,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 35,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
         {
           "type": "student_conflict",
           "exam_ids": [
@@ -430,66 +1931,6 @@
           "period_id": "1",
           "shared_students": 14,
           "description": "Exams E1 and E7 share 14 students but are in the same period 1"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E1",
-            "E11"
-          ],
-          "period_id": "1",
-          "shared_students": 3,
-          "description": "Exams E1 and E11 share 3 students but are in the same period 1"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E2",
-            "E3"
-          ],
-          "period_id": "1",
-          "shared_students": 7,
-          "description": "Exams E2 and E3 share 7 students but are in the same period 1"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E2",
-            "E4"
-          ],
-          "period_id": "1",
-          "shared_students": 11,
-          "description": "Exams E2 and E4 share 11 students but are in the same period 1"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E2",
-            "E7"
-          ],
-          "period_id": "1",
-          "shared_students": 12,
-          "description": "Exams E2 and E7 share 12 students but are in the same period 1"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E2",
-            "E10"
-          ],
-          "period_id": "1",
-          "shared_students": 1,
-          "description": "Exams E2 and E10 share 1 students but are in the same period 1"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
-            "E2",
-            "E11"
-          ],
-          "period_id": "1",
-          "shared_students": 3,
-          "description": "Exams E2 and E11 share 3 students but are in the same period 1"
         },
         {
           "type": "student_conflict",
@@ -524,16 +1965,6 @@
         {
           "type": "student_conflict",
           "exam_ids": [
-            "E3",
-            "E11"
-          ],
-          "period_id": "1",
-          "shared_students": 14,
-          "description": "Exams E3 and E11 share 14 students but are in the same period 1"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
             "E4",
             "E7"
           ],
@@ -554,16 +1985,6 @@
         {
           "type": "student_conflict",
           "exam_ids": [
-            "E4",
-            "E11"
-          ],
-          "period_id": "1",
-          "shared_students": 18,
-          "description": "Exams E4 and E11 share 18 students but are in the same period 1"
-        },
-        {
-          "type": "student_conflict",
-          "exam_ids": [
             "E7",
             "E8"
           ],
@@ -574,25 +1995,705 @@
         {
           "type": "student_conflict",
           "exam_ids": [
-            "E7",
-            "E11"
+            "E15",
+            "E16"
           ],
           "period_id": "1",
-          "shared_students": 7,
-          "description": "Exams E7 and E11 share 7 students but are in the same period 1"
+          "shared_students": 12,
+          "description": "Exams E15 and E16 share 12 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E5"
+          ],
+          "period_id": "2",
+          "shared_students": 5,
+          "description": "Exams E2 and E5 share 5 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E6"
+          ],
+          "period_id": "2",
+          "shared_students": 1,
+          "description": "Exams E2 and E6 share 1 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E9"
+          ],
+          "period_id": "2",
+          "shared_students": 11,
+          "description": "Exams E2 and E9 share 11 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E11"
+          ],
+          "period_id": "2",
+          "shared_students": 3,
+          "description": "Exams E2 and E11 share 3 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E5",
+            "E6"
+          ],
+          "period_id": "2",
+          "shared_students": 13,
+          "description": "Exams E5 and E6 share 13 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E9",
+            "E11"
+          ],
+          "period_id": "2",
+          "shared_students": 8,
+          "description": "Exams E9 and E11 share 8 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E14"
+          ],
+          "period_id": "2",
+          "shared_students": 8,
+          "description": "Exams E11 and E14 share 8 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E18"
+          ],
+          "period_id": "2",
+          "shared_students": 6,
+          "description": "Exams E11 and E18 share 6 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E19",
+            "E20"
+          ],
+          "period_id": "5",
+          "shared_students": 17,
+          "description": "Exams E19 and E20 share 17 students but are in the same period 5"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E4"
+          ],
+          "student_count": 63,
+          "total_capacity": 60,
+          "room_ids": [
+            "R1"
+          ],
+          "description": "Exam E4 has 63 students but assigned rooms ['R1'] hold only 60"
+        }
+      ],
+      "strategy_update": "Apply greedy graph coloring: (1) Build a conflict graph from student-sharing relationships. (2) Sort exams by conflict degree (highest first). (3) Assign each exam to the earliest period that contains no conflicting exam. (4) Distribute non-conflicting exams across remaining periods to balance load. This ensures no two exams sharing students occupy the same period.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 15,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 9,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E1",
+            "E7"
+          ],
+          "period_id": "1",
+          "shared_students": 14,
+          "description": "Exams E1 and E7 share 14 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E20"
+          ],
+          "period_id": "1",
+          "shared_students": 6,
+          "description": "Exams E7 and E20 share 6 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E16"
+          ],
+          "period_id": "4",
+          "shared_students": 2,
+          "description": "Exams E2 and E16 share 2 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E14",
+            "E19"
+          ],
+          "period_id": "3",
+          "shared_students": 3,
+          "description": "Exams E14 and E19 share 3 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E6",
+            "E13"
+          ],
+          "period_id": "7",
+          "shared_students": 10,
+          "description": "Exams E6 and E13 share 10 students but are in the same period 7"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E6",
+            "E17"
+          ],
+          "period_id": "7",
+          "shared_students": 1,
+          "description": "Exams E6 and E17 share 1 students but are in the same period 7"
         },
         {
           "type": "student_conflict",
           "exam_ids": [
             "E8",
-            "E11"
+            "E12"
+          ],
+          "period_id": "8",
+          "shared_students": 1,
+          "description": "Exams E8 and E12 share 1 students but are in the same period 8"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E15"
+          ],
+          "period_id": "6",
+          "shared_students": 4,
+          "description": "Exams E11 and E15 share 4 students but are in the same period 6"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E7"
+          ],
+          "student_count": 44,
+          "total_capacity": 40,
+          "room_ids": [
+            "R2"
+          ],
+          "description": "Exam E7 has 44 students but assigned rooms ['R2'] hold only 40"
+        }
+      ],
+      "strategy_update": "Build an exam conflict graph first (two exams conflict if they share any students). Then assign exams to periods such that no two conflicting exams occupy the same period. Respect each exam's available periods. Use period 1-3 for high-conflict exams, spread remaining exams across periods 4-8, grouping only non-conflicting exams.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 16,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 6,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E16"
+          ],
+          "period_id": "4",
+          "shared_students": 2,
+          "description": "Exams E2 and E16 share 2 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E7"
+          ],
+          "period_id": "2",
+          "shared_students": 17,
+          "description": "Exams E3 and E7 share 17 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E19"
+          ],
+          "period_id": "2",
+          "shared_students": 4,
+          "description": "Exams E3 and E19 share 4 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E19"
+          ],
+          "period_id": "2",
+          "shared_students": 8,
+          "description": "Exams E7 and E19 share 8 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E14"
+          ],
+          "period_id": "5",
+          "shared_students": 8,
+          "description": "Exams E11 and E14 share 8 students but are in the same period 5"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E7"
+          ],
+          "student_count": 44,
+          "total_capacity": 40,
+          "room_ids": [
+            "R2"
+          ],
+          "description": "Exam E7 has 44 students but assigned rooms ['R2'] hold only 40"
+        }
+      ],
+      "strategy_update": "For each exam, first identify all exams that share students with it. Build a conflict graph and perform greedy coloring: assign each exam to an available period that (1) has no other exam with which it shares students, (2) respects the exam's available periods, and (3) has adequate room capacity. Prioritize exams with the most conflicts to reduce backtracking.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 17,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 13,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E13",
+            "E14"
+          ],
+          "period_id": "1",
+          "shared_students": 2,
+          "description": "Exams E13 and E14 share 2 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E14",
+            "E20"
           ],
           "period_id": "1",
           "shared_students": 1,
-          "description": "Exams E8 and E11 share 1 students but are in the same period 1"
+          "description": "Exams E14 and E20 share 1 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E18",
+            "E20"
+          ],
+          "period_id": "1",
+          "shared_students": 17,
+          "description": "Exams E18 and E20 share 17 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E3"
+          ],
+          "period_id": "2",
+          "shared_students": 7,
+          "description": "Exams E2 and E3 share 7 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E7"
+          ],
+          "period_id": "2",
+          "shared_students": 12,
+          "description": "Exams E2 and E7 share 12 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E15"
+          ],
+          "period_id": "2",
+          "shared_students": 1,
+          "description": "Exams E2 and E15 share 1 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E7"
+          ],
+          "period_id": "2",
+          "shared_students": 17,
+          "description": "Exams E3 and E7 share 17 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E8"
+          ],
+          "period_id": "3",
+          "shared_students": 6,
+          "description": "Exams E4 and E8 share 6 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E19"
+          ],
+          "period_id": "3",
+          "shared_students": 4,
+          "description": "Exams E4 and E19 share 4 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E5",
+            "E17"
+          ],
+          "period_id": "4",
+          "shared_students": 4,
+          "description": "Exams E5 and E17 share 4 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E6",
+            "E12"
+          ],
+          "period_id": "5",
+          "shared_students": 12,
+          "description": "Exams E6 and E12 share 12 students but are in the same period 5"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E12"
+          ],
+          "period_id": "5",
+          "shared_students": 2,
+          "description": "Exams E11 and E12 share 2 students but are in the same period 5"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E7"
+          ],
+          "student_count": 44,
+          "total_capacity": 40,
+          "room_ids": [
+            "R2"
+          ],
+          "description": "Exam E7 has 44 students but assigned rooms ['R2'] hold only 40"
         }
       ],
-      "strategy_update": "Build a conflict graph from student-sharing pairs. Use graph coloring to assign periods: separate each conflicting pair to different periods. E9 (conflicts with E4 and E15) requires special attention\u2014assign to period 3, distinct from both E4 (period 1) and E15 (period 4). Apply greedy assignment: place connected exams in different periods, reusing periods 1\u20134 to keep the schedule compact.",
+      "strategy_update": "Always separate exams by checking actual student enrollment overlaps from the constraint matrix. Enforce period constraints strictly (check availability lists for each exam). Use graph coloring heuristic: place high-conflict exams (those sharing many students) in widely-separated periods. Prioritize hard constraints first: E10=E20 (same period), E5 before E6, E3\u2260E4. Then spread the most connected exams across periods 1-6 to minimize conflicts.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 18,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 14,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E10",
+            "E15"
+          ],
+          "period_id": "1",
+          "shared_students": 15,
+          "description": "Exams E10 and E15 share 15 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E17",
+            "E20"
+          ],
+          "period_id": "1",
+          "shared_students": 4,
+          "description": "Exams E17 and E20 share 4 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E5"
+          ],
+          "period_id": "2",
+          "shared_students": 5,
+          "description": "Exams E2 and E5 share 5 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E9"
+          ],
+          "period_id": "2",
+          "shared_students": 11,
+          "description": "Exams E2 and E9 share 11 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E11"
+          ],
+          "period_id": "2",
+          "shared_students": 3,
+          "description": "Exams E2 and E11 share 3 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E16"
+          ],
+          "period_id": "2",
+          "shared_students": 2,
+          "description": "Exams E2 and E16 share 2 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E9",
+            "E11"
+          ],
+          "period_id": "2",
+          "shared_students": 8,
+          "description": "Exams E9 and E11 share 8 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E9",
+            "E16"
+          ],
+          "period_id": "2",
+          "shared_students": 9,
+          "description": "Exams E9 and E16 share 9 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E11",
+            "E16"
+          ],
+          "period_id": "2",
+          "shared_students": 1,
+          "description": "Exams E11 and E16 share 1 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E7"
+          ],
+          "period_id": "3",
+          "shared_students": 15,
+          "description": "Exams E4 and E7 share 15 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E14"
+          ],
+          "period_id": "3",
+          "shared_students": 5,
+          "description": "Exams E4 and E14 share 5 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E14"
+          ],
+          "period_id": "3",
+          "shared_students": 3,
+          "description": "Exams E7 and E14 share 3 students but are in the same period 3"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E6"
+          ],
+          "period_id": "4",
+          "shared_students": 5,
+          "description": "Exams E3 and E6 share 5 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E8",
+            "E12"
+          ],
+          "period_id": "5",
+          "shared_students": 1,
+          "description": "Exams E8 and E12 share 1 students but are in the same period 5"
+        }
+      ],
+      "strategy_update": "1) Maintain a conflict graph of all exam pairs that share students; 2) When assigning an exam to a period, verify that NO other exam in that period conflicts with it; 3) Respect special constraints: keep E10-E20 together (C1), place E5 in an earlier period than E6 (C2), keep E3 and E4 separate (C3); 4) Use a greedy approach: assign exams to the earliest available period where they create no student conflicts and fit within room capacity.",
+      "proposal_error": null,
+      "reflect_error": null
+    },
+    {
+      "iteration": 19,
+      "model": "claude-haiku",
+      "feedback_mode": "formal",
+      "instance": "synthetic_small",
+      "parse_success": true,
+      "assigned_exams": 20,
+      "total_exams": 20,
+      "num_violations": 7,
+      "penalty": 0.0,
+      "best_penalty": 0.0,
+      "feasible": false,
+      "violations": [
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E2",
+            "E16"
+          ],
+          "period_id": "6",
+          "shared_students": 2,
+          "description": "Exams E2 and E16 share 2 students but are in the same period 6"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E3",
+            "E5"
+          ],
+          "period_id": "1",
+          "shared_students": 20,
+          "description": "Exams E3 and E5 share 20 students but are in the same period 1"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E4",
+            "E13"
+          ],
+          "period_id": "7",
+          "shared_students": 10,
+          "description": "Exams E4 and E13 share 10 students but are in the same period 7"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E7",
+            "E20"
+          ],
+          "period_id": "2",
+          "shared_students": 6,
+          "description": "Exams E7 and E20 share 6 students but are in the same period 2"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E14",
+            "E19"
+          ],
+          "period_id": "4",
+          "shared_students": 3,
+          "description": "Exams E14 and E19 share 3 students but are in the same period 4"
+        },
+        {
+          "type": "student_conflict",
+          "exam_ids": [
+            "E9",
+            "E15"
+          ],
+          "period_id": "8",
+          "shared_students": 11,
+          "description": "Exams E9 and E15 share 11 students but are in the same period 8"
+        },
+        {
+          "type": "room_capacity",
+          "exam_ids": [
+            "E7"
+          ],
+          "student_count": 44,
+          "total_capacity": 40,
+          "room_ids": [
+            "R2"
+          ],
+          "description": "Exam E7 has 44 students but assigned rooms ['R2'] hold only 40"
+        }
+      ],
+      "strategy_update": "Construct a conflict graph by analyzing exam_students data to identify which exam pairs share students. Before assigning any exam to a period, check whether ANY other exam already assigned to that period shares students with it. Use greedy assignment: sort exams by conflict degree (most constrained first), and for each exam, try available periods in order, assigning to the first period that has no student conflicts with already-scheduled exams. This respects hard constraints: room capacity, period/room availability, and distribution constraints (same-period C1, precedence C2, different-period C3).",
       "proposal_error": null,
       "reflect_error": null
     }

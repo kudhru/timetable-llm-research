@@ -1,0 +1,78 @@
+[
+  {
+    "run": 0,
+    "instance": "synthetic_small",
+    "model": "gpt-5.5",
+    "parse_success": true,
+    "num_violations": 0,
+    "violation_types": {},
+    "penalty": 0.0,
+    "feasible": true,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1048,
+    "error": null
+  },
+  {
+    "run": 1,
+    "instance": "synthetic_small",
+    "model": "gpt-5.5",
+    "parse_success": true,
+    "num_violations": 0,
+    "violation_types": {},
+    "penalty": 0.0,
+    "feasible": true,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1048,
+    "error": null
+  },
+  {
+    "run": 2,
+    "instance": "synthetic_small",
+    "model": "gpt-5.5",
+    "parse_success": true,
+    "num_violations": 9,
+    "violation_types": {
+      "student_conflict": 9
+    },
+    "penalty": null,
+    "feasible": false,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1048,
+    "error": null
+  },
+  {
+    "run": 3,
+    "instance": "synthetic_small",
+    "model": "gpt-5.5",
+    "parse_success": true,
+    "num_violations": 11,
+    "violation_types": {
+      "student_conflict": 11
+    },
+    "penalty": null,
+    "feasible": false,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1048,
+    "error": null
+  },
+  {
+    "run": 4,
+    "instance": "synthetic_small",
+    "model": "gpt-5.5",
+    "parse_success": true,
+    "num_violations": 15,
+    "violation_types": {
+      "student_conflict": 15
+    },
+    "penalty": null,
+    "feasible": false,
+    "assigned_exams": 20,
+    "total_exams": 20,
+    "raw_response_chars": 1048,
+    "error": null
+  }
+]
