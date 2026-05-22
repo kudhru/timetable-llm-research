@@ -1,0 +1,7 @@
+{
+  "model": "claude-haiku",
+  "prompt_mode": "rich",
+  "threshold_n_exams": 22,
+  "last_passing_n_exams": 13,
+  "timestamp": "2026-05-22T13:50:09.874600"
+}

@@ -1,0 +1,15 @@
+{"model": "gpt-5.5", "n_exams": 25, "seed": 0, "prompt_mode": "rich", "violations": 30, "feasible": false, "pass_rate": 0.6666666666666666, "timestamp": "2026-05-22T13:04:24.122373"}
+{"model": "gpt-5.5", "n_exams": 25, "seed": 1, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 0.6666666666666666, "timestamp": "2026-05-22T13:04:47.391100"}
+{"model": "gpt-5.5", "n_exams": 25, "seed": 2, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 0.6666666666666666, "timestamp": "2026-05-22T13:06:12.151910"}
+{"model": "gpt-5.5", "n_exams": 50, "seed": 0, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 1.0, "timestamp": "2026-05-22T13:08:05.272677"}
+{"model": "gpt-5.5", "n_exams": 50, "seed": 1, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 1.0, "timestamp": "2026-05-22T13:10:04.529165"}
+{"model": "gpt-5.5", "n_exams": 50, "seed": 2, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 1.0, "timestamp": "2026-05-22T13:12:07.012592"}
+{"model": "gpt-5.5", "n_exams": 100, "seed": 0, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 1.0, "timestamp": "2026-05-22T13:13:23.576248"}
+{"model": "gpt-5.5", "n_exams": 100, "seed": 1, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 1.0, "timestamp": "2026-05-22T13:15:45.493750"}
+{"model": "gpt-5.5", "n_exams": 100, "seed": 2, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 1.0, "timestamp": "2026-05-22T13:17:49.444172"}
+{"model": "gpt-5.5", "n_exams": 200, "seed": 0, "prompt_mode": "rich", "violations": 44, "feasible": false, "pass_rate": 0.6666666666666666, "timestamp": "2026-05-22T13:19:46.069588"}
+{"model": "gpt-5.5", "n_exams": 200, "seed": 1, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 0.6666666666666666, "timestamp": "2026-05-22T13:21:05.702970"}
+{"model": "gpt-5.5", "n_exams": 200, "seed": 2, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 0.6666666666666666, "timestamp": "2026-05-22T13:23:39.380419"}
+{"model": "gpt-5.5", "n_exams": 400, "seed": 0, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 0.6666666666666666, "timestamp": "2026-05-22T13:27:09.744478"}
+{"model": "gpt-5.5", "n_exams": 400, "seed": 1, "prompt_mode": "rich", "violations": 3, "feasible": false, "pass_rate": 0.6666666666666666, "timestamp": "2026-05-22T13:31:08.742360"}
+{"model": "gpt-5.5", "n_exams": 400, "seed": 2, "prompt_mode": "rich", "violations": 0, "feasible": true, "pass_rate": 0.6666666666666666, "timestamp": "2026-05-22T13:33:27.976680"}
